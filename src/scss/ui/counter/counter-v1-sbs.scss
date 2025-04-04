@@ -1,0 +1,96 @@
+/**************
+ Counter v1 - Side By Site Icon | Counter
+***************/
+.counter-v1-sbs {
+  --counter-v1-sbs--mb: var(--space-4xs);
+
+  --counter-v1-sbs--ico-num-col-gap: var(--space-4xs);
+
+  --counter-v1-sbs--icon-font-size: var(--text-5xl);
+  --counter-v1-sbs--icon-color: initial;
+  --counter-v1-sbs--icon-mb: var(--secondary);
+
+  --counter-v1-sbs--counter-font-size: var(--text-5xl);
+  --counter-v1-sbs--counter-color: var(--secondary);
+  --counter-v1-sbs--counter-mb: var(--secondary);
+
+  --counter-v1-sbs--count-suffix-font-size: var(--text-2xl);
+  --counter-v1-sbs--count-suffix-color: var(--secondary);
+
+  --counter-v1-sbs--title-color: var(--text-body);
+  --counter-v1-sbs--title-font-size: var(--text-xl);
+  --counter-v1-sbs--title-font-weight: 500;
+  --counter-v1-sbs--title-text-case: capitalize;
+  
+}
+
+.counter-v1-sbs {
+
+  .counter--icon-number {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-bottom: var(--counter-v1-sbs--mb);
+    column-gap: var(--counter-v1-sbs--ico-num-col-gap);
+    line-height: 1;
+  
+  
+    .brxe-icon {
+      color: var(--counter-v1-sbs--icon-color);
+      font-size: var(--counter-v1-sbs--icon-font-size);
+      margin-bottom: var(--counter-v1-sbs--icon-mb-size);
+    }
+  
+    .brxe-counter {
+
+      .count {
+        color: var(--counter-v1-sbs--counter-color);
+        font-size: var(--counter-v1-sbs--counter-font-size);
+        margin-bottom: var(--counter-v1-sbs--counter-mb);
+      }
+
+      .suffix {
+        font-size: var(--counter-v1-sbs--count-suffix-font-size);
+        color: var(--counter-v1-sbs--count-suffix-color);
+      }
+    }
+  }
+
+  .counter--title {
+    color: var(--counter-v1-sbs--title-color);
+    font-size: var(--text-xl);
+    font-weight: var(--counter-v1-sbs--title-font-weight);
+    text-transform: var(--counter-v1-sbs--title-text-case);
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+
+
+/**************
+Responsive
+***************/
+/* desktop-1440 | __on-3xl */ 
+@include desktop-1440  {}
+
+/* desktop-1366 | __on-2xl */
+@include desktop-1366  {}
+
+/* desktop-1200 | __on-xl */
+@include desktop-1200  {}
+ 
+/* tablet-992 | __on-l */
+@include tablet-992 {}
+ 
+/* tablet 767 __on-m */
+@include tablet-767 {}
+ 
+/* mobile-440 __on-s */
+@include mobile-440 {}
+
+

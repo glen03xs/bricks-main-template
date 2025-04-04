@@ -1,0 +1,82 @@
+/**************
+ Hero Block - Bottom Bar
+***************/
+
+.ha--with-bottom-bar {
+  //Padding
+  --ha--bb-pd-t: var(--space-5xs);
+  --ha--bb-pd-b: var(--space-5xs);
+  --ha--bb-pd-t__on-m: var(--ha--bb-pd-t);
+  --ha--bb-pd-b__on-m: var(--ha--bb-pd-b);
+  // BG Color | Font Size, Color | Separator Color
+  --ha--bb-bg-color: var(--secondary);
+  --ha--bb-font-size: var(--text-s);
+  --ha--bb-font-color: var(--text-light);
+  --ha--bb-separator-color: var(--text-light);
+}
+
+.hero-area {
+  // Add Bottom Bar
+  &.ha--with-bottom-bar {
+    position: relative;
+
+    .hero-area--bottom-bar {
+      position: absolute;
+      bottom: 0;
+      background-color: var(--ha--bb-bg-color);
+      padding-top: var(--ha--bb-pd-t);
+      padding-bottom: var(--ha--bb-pd-b);
+
+      ul {
+        li {
+          font-size: var(--ha--bb-font-size);
+          color: var(--ha--bb-font-color);
+          a {
+            font-size: var(--ha--bg-font-size);
+            color: var(--ha--bb-font-color);
+          }
+        }
+      }
+
+      .t--list-hor-with-bar li:before {
+        background-color: var(--ha--bb-separator-color);
+      }
+    }
+  }
+}
+
+.hero-area--content {
+}
+
+/**************
+Responsive
+***************/
+/* desktop-1440 | __on-3xl */
+@include desktop-1440 {
+}
+
+/* desktop-1366 | __on-2xl */
+@include desktop-1366 {
+}
+
+/* desktop-1200 | __on-xl */
+@include desktop-1200 {
+}
+
+/* tablet-992 | __on-l */
+@include tablet-992 {
+}
+
+/* tablet 767 __on-m */
+@include tablet-767 {
+  .hero-area {
+    &.ha--with-bottom-bar {
+      padding-top: var(--ha--bb-pd-t__on-m);
+      padding-bottom: var(--ha--bb-pd-b__on-m);
+    }
+  }
+}
+
+/* mobile-440 __on-s */
+@include mobile-440 {
+}

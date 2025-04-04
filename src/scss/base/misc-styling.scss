@@ -1,0 +1,99 @@
+/**************
+ Misc Styling
+***************/
+/****** Variables *******/
+
+
+/****** Desktop *******/
+// .title-w-hl {
+//   text-transform: uppercase;
+
+//   span {
+//     color: var(--primary) !important;
+//   }
+// }
+
+// .hero-title-w-glow {
+//   text-shadow: 0 0 50px rgba(221, 0, 129, 0.8);
+// }
+
+// .title-w-glow {
+//   text-shadow: 0 0 30px rgba(221, 0, 129, 0.8);
+// }
+
+// .btn--w-glow {
+//   box-shadow: 0 0 50px rgba(223, 22, 139, 0.8);
+// }
+
+// .ol-custom { 
+//   list-style: none;
+//   counter-reset: my-counter;
+//   padding-left: 0;
+//   margin: 0;
+
+//   li {
+//     counter-increment: my-counter;
+//     margin-bottom: var(--space-2xs);
+//     position: relative;
+//     padding-left: var(--text-2xl);
+//     display: flex;
+//     flex-wrap: wrap;
+
+//     &::before {
+//       content: "0" counter(my-counter) " ";
+//       color: var(--primary);
+//       font-weight: 500;
+//       font-size: var(--text-xl);
+//       font-family: var(--font-custom-1);
+//       position: absolute;
+//       left: 0;
+//       top: -2px;
+//     }
+//   }
+// }
+
+// .item-number-text {
+//   display: flex;
+//   align-items: center;
+//   column-gap: var(--space-3xs);
+//   border-bottom: 1px solid rgba(203, 208, 242, 1);
+//   width: 100%;
+//   padding: var(--space-2xs) 0;
+//   max-width: 410px;
+
+//   .item-number-text--no, .item-number-text--text {
+//     margin-bottom: 0;
+//   }
+
+//   .item-number-text--no {
+//     color: var(--primary);
+//     font-family: var(--font-custom-1);
+//     font-size: var(--font-number-accent-1);
+//     font-weight: 500;
+//   }
+
+//   .item-number-text--text {
+//     font-size: var(--text-m);
+//   }
+// }
+
+/**************
+Responsive
+***************/
+/* desktop-1440 | __on-3xl */ 
+@include desktop-1440  {}
+
+/* desktop-1366 | __on-2xl */
+@include desktop-1366  {}
+
+/* desktop-1200 | __on-xl */
+@include desktop-1200  {}
+ 
+/* tablet-992 | __on-l */
+@include tablet-992 {}
+ 
+/* tablet 767 __on-m */
+@include tablet-767 {}
+ 
+/* mobile-440 __on-s */
+@include mobile-440 {}

@@ -1,0 +1,111 @@
+/**************
+ Card - Icon and Content 
+***************/
+.card--icon-content-v1 {
+  --card--ic-co-v1-row-gap: var(--space-2xs);
+  --card--ic-co-v1-mxw: 300px;
+  --card--ic-co-v1-padding: 0; // var(--space-2xs)var(--space-2xs)
+  --card--ic-co-v1-bg: transparent; // var(--bg-light)
+
+  --card--ic-co-v1-icon-color: var(--primary);
+  --card--ic-co-v1-icon-size: var(--icon-m);
+
+  --card--ic-co-v1-title-color: var(--primary);
+  --card--ic-co-v1-title-size: var(--text-xl);
+  --card--ic-co-v1-title-font-family: var(--font-heading);
+  --card--ic-co-v1-title-font-weight: 500;
+  --card--ic-co-v1-title-case: capitalize;
+  --card--ic-co-v1-title-line-height: initial;
+  --card--ic-co-v1-title-mb: var(--space-6xs);
+
+  --card--ic-co-v1-text-color: var(--primary);
+  --card--ic-co-v1-text-size: var(--text-m);
+  --card--ic-co-v1-text-font-family: var(--font-body);
+  --card--ic-co-v1-text-font-weight: 400;
+  --card--ic-co-v1-text-case: initial;
+  --card--ic-co-v1-line-height: initial;
+  --card--ic-co-v1-text-mb: 0;
+
+  --card--ic-co-v1-btn-mt: var(--space-m);
+}
+
+.card--icon-content-v1 {
+  row-gap: var(--card--ic-co-v1-row-gap);
+  padding: var(--card--ic-co-v1-padding);
+  background: var(--card--ic-co-v1-bg);
+
+  .card--icon-wrap {
+    max-width: var(--card--ic-co-v1-mxw);
+
+    .brxe-icon {
+      color: var(--card--ic-co-v1-icon-color);
+      font-size: var(--card--ic-co-v1-icon-size);
+    }
+  }
+
+  .card--content-wrap {
+    max-width: var(--card--ic-co-v1-mxw);
+
+    h3 {
+      color: var(--card--ic-co-v1-title-color);
+      font-size: var(--card--ic-co-v1-title-size);
+      font-family: var(--card--ic-co-v1-title-font-family);
+      font-weight: var(--card--ic-co-v1-title-font-weight);
+      text-transform: var(--card--ic-co-v1-title-case);
+      line-height: var(--card--ic-co-v1-title-line-height);
+      margin-bottom: var(--card--ic-co-v1-title-mb);
+    }
+
+    p {
+      color: var(--card--ic-co-v1-text-color);
+      font-size: var(--card--ic-co-v1-text-size);
+      font-family: var(--card--ic-co-v1-text-font-family);
+      font-weight: var(--card--ic-co-v1-text-font-weight);
+      text-transform: var(--card--ic-co-v1-text-case);
+      line-height: var(--card--ic-co-v1-text-line-height);
+      margin-bottom: var(--card--ic-co-v1-text-mb);
+    }
+
+    .brxe-button {
+      margin-top: var(--card--ic-co-v1-btn-mt);
+    }
+
+    & > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &.card--ico-con-centered {
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/**************
+Responsive
+***************/
+/* desktop-1440 | __on-3xl */
+@include desktop-1440 {
+}
+
+/* desktop-1366 | __on-2xl */
+@include desktop-1366 {
+}
+
+/* desktop-1200 | __on-xl */
+@include desktop-1200 {
+}
+
+/* tablet-992 | __on-l */
+@include tablet-992 {
+}
+
+/* tablet 767 __on-m */
+@include tablet-767 {
+}
+
+/* mobile-440 __on-s */
+@include mobile-440 {
+}

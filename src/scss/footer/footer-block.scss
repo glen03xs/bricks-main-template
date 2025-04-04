@@ -1,0 +1,61 @@
+/**************
+ Footer Block
+***************/
+:root {
+  --footer-logo-width: 240px; // Footer Block - About
+  --fblk-title-size: var(--text-xl); 
+  --fblk-title-color: var(--text-footer); 
+  --fblk-title-case: capitalize; 
+  --fblk-title-letter-spacing: inherit; 
+  --fblk-title-font-weight: 500; 
+  --fblk-mb: var(--space-2xs); 
+}
+
+/****** Footer Block - Main *******/
+.footer-block {
+  display: flex;
+
+  &.f-blk--align-center {
+    align-items: center;
+  }
+
+  &.f-blk--align-right {
+    align-items: end;
+  }
+}
+
+.footer-block--wrap {
+}
+
+// Footer Block - Title
+.footer-block__title {
+  color: var(--fblk-title-color);
+  text-transform: var(--fblk-title-case);
+  font-size: var(--fblk-title-size);
+  letter-spacing: var(--fblk-title-letter-spacing);
+  margin-bottom: var(--fblk-mb);
+  font-weight: var(--fblk-title-font-weight);
+}
+
+
+/**************
+Responsive
+***************/
+/* desktop-1440 | __on-3xl */ 
+@include desktop-1440  {}
+
+/* desktop-1366 | __on-2xl */
+@include desktop-1366  {}
+
+/* desktop-1200 | __on-xl */
+@include desktop-1200  {}
+ 
+/* tablet-992 | __on-l */
+@include tablet-992 {}
+ 
+/* tablet 767 __on-m */
+@include tablet-767 {}
+ 
+/* mobile-440 __on-s */
+@include mobile-440 {}
+

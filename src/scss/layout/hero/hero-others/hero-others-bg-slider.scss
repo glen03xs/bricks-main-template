@@ -1,0 +1,70 @@
+/**************
+ Hero Others - Slider BG
+***************/
+
+.hero-area {
+
+  &.ha--with-slider-bg {
+    .hero-area--slider-bg-desktop {
+      position: absolute;
+      height: 100%;
+      z-index: 10;
+    }
+    
+    .hero-area--slider-bg-mobile {
+      position: absolute;
+      height: 100%;
+      z-index: 10;
+      display: none;
+    }
+  }
+}
+
+/**************
+Responsive
+***************/
+/* desktop-1440 | __on-3xl */
+@include desktop-1440 {
+}
+
+/* desktop-1366 | __on-2xl */
+@include desktop-1366 {
+}
+
+/* desktop-1200 | __on-xl */
+@include desktop-1200 {
+}
+
+/* tablet-992 | __on-l */
+@include tablet-992 {
+}
+
+/* tablet 767 __on-m */
+@include tablet-767 {
+  .hero-area {
+
+    &.ha--with-slider-bg {
+      .hero-area--slider-bg-desktop {
+        display: none;
+      }
+      
+      .hero-area--slider-bg-mobile {
+        display: block;
+      }
+    }
+
+    &.ha--with-slider-bg__no-mobile-ver {
+      .hero-area--slider-bg-desktop {
+        display: block;
+      }
+      
+      .hero-area--slider-bg-mobile {
+        display: none;
+      }
+    }
+  }
+}
+
+/* mobile-440 __on-s */
+@include mobile-440 {
+}

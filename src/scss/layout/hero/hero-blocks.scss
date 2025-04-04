@@ -1,0 +1,41 @@
+/**************
+ Hero Blocks
+***************/
+
+/* Bottom Bar */
+@import './hero-blocks/hero-block-bottom-bar.scss';
+
+/* Card v1 */
+@import './hero-blocks/hero-block-card-v1.scss';
+
+/* Contact Form v1 Block */
+@import './hero-blocks/hero-block-cf-v1.scss';
+
+
+/**************
+ Responsive
+***************/
+/* desktop-1440 | __on-3xl */
+@include desktop-1440 {
+}
+
+/* desktop-1366 | __on-2xl */
+@include desktop-1366 {
+}
+
+/* desktop-1200 | __on-xl */
+@include desktop-1200 {
+}
+
+/* tablet-992 | __on-l */
+@include tablet-992 {
+}
+
+/* tablet 767 __on-m */
+@include tablet-767 {
+
+}
+
+/* mobile-440 __on-s */
+@include mobile-440 {
+}

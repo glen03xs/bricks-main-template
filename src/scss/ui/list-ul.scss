@@ -1,0 +1,190 @@
+/**************
+   List UL
+  ***************/
+
+/****** List with Icon *******/
+.t-list--with-icon {
+  margin: 0;
+
+  li {
+    margin-bottom: var(--space-5xs);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: var(--text-title);
+
+      &:hover {
+        color: var(--primary);
+      }
+    }
+  }
+
+  .content {
+    column-gap: var(--space-5xs);
+    justify-content: start;
+    align-items: baseline;
+    margin-bottom: var(--space-7xs);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .icon {
+    max-width: 20px;
+    position: relative;
+
+    i {
+      position: absolute;
+      font-size: 20px;
+      top: -15px;
+    }
+  }
+
+  .title {
+    justify-content: start;
+  }
+
+  .description {
+    padding-left: 28px;
+  }
+}
+
+// List - Horizontal with Bar Separator
+.t--list-hor-with-bar {
+  display: flex;
+  margin: 0;
+  width: auto;
+  column-gap: var(--space-xs);
+
+  li {
+    margin: 0;
+    position: relative;
+
+    &:before {
+      content: '';
+      width: 1px;
+      height: var(--space-4xs);
+      display: block;
+      background-color: var(--secondary);
+      position: absolute;
+      top: 4px;
+      left: -18px;
+    }
+
+    &:first-child {
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  .content {
+    column-gap: var(--space-s);
+    justify-content: start;
+    align-items: baseline;
+    margin-bottom: var(--space-7xs);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .icon {
+      position: relative;
+      left: 20px;
+      top: 2px;
+
+      i {
+        position: absolute;
+        font-size: 20px;
+        top: -15px;
+      }
+    }
+
+    .title {
+      margin: 0;
+    }
+  }
+}
+
+/**************
+Responsive
+***************/
+/* desktop-1440 | __on-3xl */ 
+@include desktop-1440  {}
+
+/* desktop-1366 | __on-2xl */
+@include desktop-1366  {}
+
+/* desktop-1200 | __on-xl */
+@include desktop-1200  {
+
+  // List - Horizontal with Bar Separator
+  .t--list-hor-with-bar {
+
+    &.t--lhwb--f-dir-col-no-bar__on-xl {
+      flex-direction: column;
+
+      li:before {
+        display: none;
+      }
+    }
+
+    &.t--lhwb--no-bar__on-xl {
+      li:before {
+        display: none;
+      }
+    }
+  }
+}
+ 
+/* tablet-992 | __on-l */
+@include tablet-992 {
+
+  // List - Horizontal with Bar Separator
+  .t--list-hor-with-bar {
+
+    &.t--lhwb--f-dir-col-no-bar__on-l {
+      flex-direction: column;
+
+      li:before {
+        display: none;
+      }
+    }
+
+    &.t--lhwb--no-bar__on-l {
+      li:before {
+        display: none;
+      }
+    }
+  }
+}
+ 
+/* tablet 767 __on-m */
+@include tablet-767 {
+
+    // List - Horizontal with Bar Separator
+    .t--list-hor-with-bar {
+
+      &.t--lhwb--f-dir-col-no-bar__on-m {
+        flex-direction: column;
+  
+        li:before {
+          display: none;
+        }
+      }
+  
+      &.t--lhwb--no-bar__on-m {
+        li:before {
+          display: none;
+        }
+      }
+    }
+}
+ 
+/* mobile-440 __on-s */
+@include mobile-440 {}

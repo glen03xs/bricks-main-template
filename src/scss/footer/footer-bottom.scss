@@ -1,0 +1,266 @@
+/**************
+ Footer Bottom
+***************/
+.footer-bottom {
+  --fb-pd-tb: var(--space-3xs);
+  --fb-bg-color: #30353a;
+  --fb-text-color: var(--text-footer);
+
+  // Footer Copy
+  --fb-copy-font: var(--font-body);
+  --fb-copy-font-weight: 300;
+  --fb-copy-letter-spacing: .5px;
+  --fb-copy-text-size: var(--text-m);
+  --fb-copy-text-color: var(--fb-text-color);
+  --fb-copy-link-color: var(--text-ligh);
+  --fb-copy-link-decor: underline;
+
+  // Social Icon
+  --fb-social-icon-gap: var(--space-2xs);
+  --fb-social-icon-font-size: 16px;
+  --fb-social-icon-color: var(--primary-black);
+
+  // Social Icon BG
+  --fb-social-icon-bg: var(--primary);
+  --fb-social-icon-pd: 2px;
+  --fb-social-icon-border-radius: 52%;
+  --fb-social-icon-height: 28px;
+  --fb-social-icon-width: var(--fb-social-icon-height);
+}
+
+/****** Footer Bottom - Wrap *******/
+
+.footer-bottom {
+  background-color: var(--fb-bg-color);
+  padding: var(--fb-pd-tb);
+
+  &.fb--light-text {
+    p,
+    span,
+    li {
+      color: #ffffff;
+    }
+  }
+
+  &.fb--light-text-a {
+    a {
+      color: #ffffff;
+    }
+  }
+
+  &.fb--light-menu-text {
+    .brxe-nav-menu a {
+      color: #ffffff;
+    }
+  }
+
+  &.fb--light-icon {
+    i {
+      color: #ffffff;
+    }
+  }
+
+  &.fb--light-all {
+    a,
+    p,
+    span,
+    li,
+    i {
+      color: #ffffff;
+    }
+  }
+}
+
+.footer-bottom--wrap {
+  width: 100%;
+
+  // Fluid
+  &.fb--col-fluid {
+    display: flex;
+    flex-wrap: wrap;
+
+    .footer-bottom--item {
+      p {
+        text-align: center;
+      }
+    }
+  }
+
+  &.fb--align-center {
+    justify-content: center;
+  }
+
+  &.fb--align-right {
+    justify-content: end;
+  }
+
+  &.fb--align-space-between {
+    justify-content: space-between;
+  }
+
+  &.fb--no-wrap {
+    flex-wrap: nowrap;
+  }
+  
+
+  // Columns
+  &.fb--col-2-even {
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+  }
+
+  &.fb--col-3-even {
+    grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+  }
+
+  &.fb--v-align-middle-all {
+    .footer-bottom--item {
+      justify-content: center;
+    }
+  }
+}
+
+.footer-bottom--item {
+  width: auto;
+  // flex-direction: row;
+
+  &.fb--v-align-middle {
+    justify-content: center;
+  }
+
+  &.fb--v-align-bottom {
+    justify-content: end;
+  }
+
+  &.fb--h-align-right {
+    align-items: end;
+  }
+  &.fb--h-align-center {
+    align-items: center;
+  }
+}
+
+.footer-bottom--item-wrap {
+  width: auto;
+}
+
+.footer-bottom--social {
+  .brxe-social-icons {
+    column-gap: var(--fb-social-icon-gap);
+    justify-content: center;
+
+    li {
+      margin-bottom: 0;
+    }
+
+    .icon {
+      font-size: var(--fb-social-icon-font-size);
+      color: var(--fb-social-icon-color);
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &.f-bot--social-w-bg {
+    .brxe-social-icons {
+      .icon {
+        padding: var(--fb-social-icon-pd);
+        background: var(--fb-social-icon-bg);
+        border-radius: var(--fb-social-icon-border-radius);
+        height: var(--fb-social-icon-height);
+        width: var(--fb-social-icon-width);
+      }
+    }
+  }
+}
+
+.footer-bottom--nav {
+  // &.nav-align-right {
+  //   .bricks-nav-menu {
+  //     justify-content: end;
+  //   }
+  // }
+
+  // &.nav-align-center {
+  //   .bricks-nav-menu {
+  //     justify-content: center;
+  //   }
+  // }
+
+  .bricks-nav-menu {
+    column-gap: var(--space-xs);
+
+    li {
+      margin: 0;
+    }
+  }
+}
+
+.footer-bottom--copy {
+  .brxe-text {
+    letter-spacing: 0;
+    p {
+      font-size: var(--fb-copy-text-size);
+      color: var(--fb-copy-text-color);
+      font-weight: var(--fb-copy-font-weight);
+      font-family: var(--font-body);
+      letter-spacing: var(--fb-copy-letter-spacing);
+      margin-bottom: 0;
+    }
+
+    a {
+      text-decoration: var(--fb-copy-link-decor);
+      font-size: var(--fb-copy-text-size);
+      color: var(--fb-copy-link-color);
+      font-weight: var(--fb-copy-font-weight);
+      font-family: var(--font-body);
+      letter-spacing: var(--fb-copy-letter-spacing);
+    }
+  }
+}
+
+/******  
+Responsive
+ *******/
+/******  Tablet 992 *******/
+@include tablet-992 {
+  .footer-bottom--wrap {
+    &.fb--align-left__on-l {
+      justify-content: start;
+    }
+
+    &.fb--align-center__on-l {
+      justify-content: center;
+    }
+
+    &.fb--align-right__on-l {
+      justify-content: end;
+    }
+  }
+}
+
+@include tablet-767 {
+  .footer-bottom--wrap {
+    &.fb--align-left__on-m {
+      justify-content: start;
+    }
+
+    &.fb--align-center__on-m {
+      justify-content: center;
+    }
+
+    &.fb--align-right__on-m {
+      justify-content: end;
+    }
+
+    &.fb--reversed__on-m  {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+  }
+}
+
+/******  Mobile 440 *******/
+@include mobile-440 {
+}

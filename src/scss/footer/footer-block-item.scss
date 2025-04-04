@@ -1,0 +1,281 @@
+/**************
+ Footer Block Items
+***************/
+.footer-block {
+  // About Block
+  --fblk-about-text-mxw: 440px;
+  --fblk-about-text-mxw__on-l: 100%;
+
+  // Nav Block
+  --fblk-nav-menu-gap: var(--space-5xs);
+  --fblk-nav-text-color: var(--text-footer);
+  --fblk-nav-text-color-hover: var(--primary);
+  --fblk-nav-text-size: inherit;
+  --fblk-nav-text-case: inherit;
+  --fblk-nav-text-weight: inherit;
+  --fblk-nav-icon-text-gap: var(--space-5xs);
+  --fblk-nav-icon: "\f061";
+  --fblk-nav-icon-ff: Font Awesome\ 6 Solid;
+  --fblk-nav-icon-transition: all 0.3s ease-in-out;
+  --fblk-nav-icon-color: inherit;
+
+  // Contact Block
+  --fblk-contact-gap: var(--space-3xs);
+  --fblk-contact-text-color: inherit;
+  --fblk-contact-text-link-color: red;
+  --fblk-contact-text-link-color-hover: var(--primary);
+  // --fblk-contact-text-link-decor: underline;
+  --fblk-contact-text-size: inherit;
+  --fblk-contact-text-case: inherit;
+  --fblk-contact-text-weight: inherit;
+  --fblk-contact-icon-text-gap: var(--space-s);
+
+  // Social Icon BG
+  --fblk-contact-social-mt: var(--space-s);
+  --fblk-contact-social-icon-size: var(--text-2xl);
+  --fblk-contact-social-icon-gap: var(--space-2xs);
+  --fblk-contact-social-icon-color: inherit;
+  --fblk-contact-social-icon-color-hover: var(--primary-black);
+
+  --fblk-contact-social-icon-bg: var(--primary);
+  --fblk-contact-social-icon-bg-hover: var(--primary);
+  --fblk-contact-social-icon-pd: 2px;
+  --fblk-contact-social-icon-border-radius: 52%;
+  --fblk-contact-social-icon-height: 28px;
+  --fblk-contact-social-icon-width: var(--fb-social-icon-height);
+}
+
+/*** Other Versions ***/
+// @import './footer-base.scss/..';
+
+/*** Footer About Block ***/
+.footer-block--about {
+  .brxe-text {
+    max-width: var(--fblk-about-text-mxw);
+
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .footer-block--about__logo {
+    max-width: var(--footer-logo-width);
+  }
+}
+
+/*** Footer - Navigation ***/
+.footer-block--nav {
+  .footer-block--nav__menu {
+    &.f-blk-nm--nav-2-col ul {
+      display: grid;
+      column-gap: var(--space-s);
+      grid-template-columns: 1fr 1fr;
+    }
+
+    ul {
+      row-gap: var(--fblk-nav-menu-gap);
+
+      li {
+        margin-left: 0 !important;
+        margin-bottom: 0;
+        display: flex;
+        column-gap: var(--fblk-nav-icon-text-gap);
+
+        a {
+          color: var(--fblk-nav-text-color);
+          font-size: var(--fblk-nav-text-size);
+          text-transform: var(--fblk-nav-text-case);
+          font-weight: var(--fblk-nav-text-weight);
+
+          &:hover {
+            color: var(--fblk-nav-text-color-hover);
+          }
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &::before {
+          content: var(--fblk-nav-icon);
+          font-family: var(--fblk-nav-icon-ff);
+          transition: var(--fblk-nav-icon-transition);
+          color: var(--fblk-nav-icon-color);
+        }
+      }
+    }
+  }
+
+  &.f-blk-nav--no-icons {
+    .footer-block--nav__menu li:before {
+      display: none;
+    }
+  }
+
+  &.f-blk-nav--no-submenu {
+    .footer-block--nav__menu ul li {
+      button,
+      .sub-menu {
+        display: none;
+      }
+    }
+  }
+}
+
+.footer-block--nav-dual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/*** Footer Contact ***/
+.footer-block--contact {
+  .footer-block--contact__info-list {
+    margin: 0;
+    row-gap: var(--fblk-contact-gap);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding-left: 0;
+
+    li {
+      margin-bottom: 0;
+
+      span {
+        color: var(--fblk-contact-text-color);
+      }
+
+      span,
+      a {
+        font-size: var(--fblk-contact-text-size);
+        text-transform: var(--fblk-contact-text-case);
+        font-weight: var(--fblk-contact-text-weight);
+      }
+
+      a {
+        color: var(--fblk-contact-text-link-color);
+        text-decoration: underline;
+
+        &:hover {
+          color: var(--fblk-contact-text-link-color-hover);
+        }
+
+        span {
+          text-decoration: var(--fblk-contact-text-link-decor);
+        }
+      }
+    }
+
+    .content {
+      column-gap: var(--fblk-contact-icon-text-gap);
+      justify-content: start;
+      align-items: baseline;
+      margin-bottom: 0;
+    }
+
+    .icon {
+      max-width: 20px;
+      position: relative;
+      left: 12px;
+
+      i {
+        position: absolute;
+        font-size: 20px;
+        top: -15px;
+      }
+    }
+
+    .title {
+      justify-content: start;
+    }
+
+    &.fblk-contact--no-icons {
+      .footer-block--contact__info-list .content .icon {
+        display: none;
+      }
+    }
+  }
+
+  .footer-block--contact__social {
+    margin-top: var(--fblk-contact-social-mt);
+
+    ul {
+      column-gap: var(--fblk-contact-social-icon-gap);
+
+      li {
+        margin-bottom: 0;
+
+        a {
+          .icon {
+            color: var(--fblk-contact-social-icon-color);
+            font-size: var(--fblk-contact-social-icon-size);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          &:hover .icon {
+            color: var(--fblk-contact-social-icon-color-hover);
+          }
+        }
+      }
+    }
+
+    &.f-blk--social-w-bg {
+      ul {
+        a {
+          .icon {
+            padding: var(--fblk-contact-ocial-icon-pd);
+            background: var(--fblk-contact-social-icon-bg);
+            border-radius: var(--fblk-contact-social-icon-border-radius);
+            height: var(--fblk-contact-social-icon-height);
+            width: var(--fblk-contact-social-icon-width);
+          }
+
+          &:hover .icon {
+            background: var(--fblk-contact-social-icon-bg-hover);
+          }
+        }
+      }
+    }
+  }
+
+  &.f-blk-contact--no-icons {
+    .footer-block--contact__info-list li .icon {
+      display: none;
+    }
+  }
+}
+
+/**************
+Responsive
+***************/
+/* desktop-1440 | __on-3xl */
+@include desktop-1440 {
+}
+
+/* desktop-1366 | __on-2xl */
+@include desktop-1366 {
+}
+
+/* desktop-1200 | __on-xl */
+@include desktop-1200 {
+}
+
+/* tablet-992 | __on-l */
+@include tablet-992 {
+  .footer-block--about {
+    .brxe-text {
+      max-width: var(--fblk-about-text-mxw__on-l);
+    }
+  }
+}
+
+/* tablet 767 __on-m */
+@include tablet-767 {
+}
+
+/* mobile-440 __on-s */
+@include mobile-440 {
+}
