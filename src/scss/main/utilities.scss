@@ -21,7 +21,6 @@
 .t--bg--white {
   background-color: #ffffff;
 }
-
 .t--bg--gray-light {
   background-color: var(--bg-light-gray);
 }
@@ -34,35 +33,27 @@
 .t--bg--gray-dark {
   background-color: var(--bg-dark-gray);
 }
-
 .t--bg--black {
   background-color: var(--bg-black);
 }
-
 .t--bg--primary {
   background-color: var(--primary);
 }
-
 .t--bg--primary-light {
   background-color: var(--primary-light);
 }
-
 .t--bg--primary-medium {
   background-color: var(--primary-medium);
 }
-
 .t--bg--secondary {
   background-color: var(--secondary);
 }
-
 .t--bg--secondary-light {
   background-color: var(--secondary-light);
 }
-
 .t--bg--secondary-medium {
   background-color: var(--secondary-medium);
 }
-
 .t--bg--custom-one {
   background-color: var(--bg-custom-1);
 }
@@ -136,18 +127,7 @@
   }
 }
 
-.t--text-align--left {
-  text-align: left;
-}
-
-.t--text-align--center {
-  text-align: center;
-}
-
-.t--text-align--right {
-  text-align: right;
-}
-
+// Link Color
 .t--link-color--light {
   color: var(--text-light);
 
@@ -180,6 +160,7 @@
   }
 }
 
+// Icon Color
 .t--icons--light {
   i {
     color: var(--text-light);
@@ -202,6 +183,19 @@
   i {
     color: var(--tertiary);
   }
+}
+
+// Text Alignment
+.t--text-align--left {
+  text-align: left;
+}
+
+.t--text-align--center {
+  text-align: center;
+}
+
+.t--text-align--right {
+  text-align: right;
 }
 
 .t--reset-blockquote {
