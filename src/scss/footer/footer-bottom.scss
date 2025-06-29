@@ -9,16 +9,16 @@
   // Footer Copy
   --fb-copy-font: var(--font-body);
   --fb-copy-font-weight: 300;
-  --fb-copy-letter-spacing: .5px;
+  --fb-copy-letter-spacing: 0;
   --fb-copy-text-size: var(--text-m);
   --fb-copy-text-color: var(--fb-text-color);
   --fb-copy-link-color: var(--text-ligh);
-  --fb-copy-link-decor: underline;
+  --fb-copy-link-decor: var(--default-text-decoration);
 
   // Social Icon
   --fb-social-icon-gap: var(--space-2xs);
   --fb-social-icon-font-size: 16px;
-  --fb-social-icon-color: var(--primary-black);
+  --fb-social-icon-color: var(--text-light);
 
   // Social Icon BG
   --fb-social-icon-bg: var(--primary);

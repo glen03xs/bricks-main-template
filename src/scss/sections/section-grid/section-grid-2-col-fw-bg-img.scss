@@ -1,0 +1,214 @@
+/**************
+ Section Grid Custom
+***************/
+/****** Variables *******/
+.section-col-2--fw-bg {
+  --sec-col-2--col-no__on-l: 1fr;
+  --sec-col-2--col-no__on-m: var(--sec-col-2--col-no__on-l);
+  --sec-col-2--col-gap: var(--space-se-col-2-col-gap);
+  --sec-col-2--max-height: auto;
+  --sec-col-2--max-height__on-l: auto;
+  --sec-col-2--img-aspect-ratio: auto;
+  --sec-col-2--img-aspect-ratio__on-l: 16/11;
+  --sec-col-2--img-aspect-ratio__on-m: 16/11;
+}
+/****** CSS *******/
+.section-container-img-fw {
+  width: 100%;
+  max-width: 100%;
+}
+
+.section-col-2--fw-bg {
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+  .sec-col-2-fw-bg--left,
+  .sec-col-2-fw-bg--right {
+    width: calc(var(--body-container-w) / 2);
+    max-width: var(--body-container-mw);
+    max-height: var(--sec-col-2--max-height);
+  }
+
+  .sec-col-2-fw-bg--left-fw,
+  .sec-col-2-fw-bg--right-fw {
+    max-height: var(--sec-col-2--max-height);
+    position: relative;
+
+    & > div {
+        height: 100%;
+    }
+
+    figure {
+      aspect-ratio: var(--sec-col-2--img-aspect-ratio);
+
+      img {
+        object-fit: cover;
+      }
+    }
+
+    &.sec-col-2-fw-bg--img-auto-height figure {
+      position: absolute;
+    }
+  }
+
+  .sec-col-2-fw-bg--left-fw {
+  }
+  .sec-col-2-fw-bg--left {
+    margin-left: auto;
+
+    & > div {
+      align-self: flex-start;
+    }
+
+    &.sec-col-2-fw-bg--content-centered {
+        margin-left: auto;
+        margin-right: auto;
+    }
+  }
+
+  .sec-col-2-fw-bg--right-fw {
+  }
+  .sec-col-2-fw-bg--right {
+    margin-right: auto;
+
+    & > div {
+      align-self: flex-end;
+    }
+
+    &.sec-col-2-fw-bg--content-centered {
+        margin-left: auto;
+        margin-right: auto;
+    }
+  }
+}
+/**************
+Responsive
+***************/
+/* desktop-1440 | __on-3xl */
+@include desktop-1440 {
+  .section-col-2--fw-bg {
+    .sec-col-2-fw-bg--left,
+    .sec-col-2-fw-bg--right {
+      width: calc(var(--body-container-w__on-3xl) / 2);
+    }
+  }
+}
+
+/* desktop-1366 | __on-2xl */
+@include desktop-1366 {
+}
+
+/* desktop-1200 | __on-xl */
+@include desktop-1200 {
+  .section-col-2--fw-bg {
+    .sec-col-2-fw-bg--left,
+    .sec-col-2-fw-bg--right {
+      width: calc(var(--body-container-w__on-xl) / 2);
+    }
+  }
+}
+
+/* tablet-992 | __on-l */
+@include tablet-992 {
+  .section-col-2--fw-bg {
+    grid-template-columns: 1fr;
+
+    &.section-col-2-fw-bg--reversed__on-l {
+      & > div:first-child {
+        order: 2;
+      }
+
+      & > div:last-child {
+        order: 1;
+      }
+    }
+
+    .sec-col-2-fw-bg--left,
+    .sec-col-2-fw-bg--right {
+      width: var(--body-container-w__on-l);
+      max-width: var(--body-container-mw);
+      max-height: var(--sec-col-2--max-height__on-l);
+      margin: 0 auto;
+    }
+
+    .sec-col-2-fw-bg--left-fw,
+    .sec-col-2-fw-bg--right-fw {
+      max-height: var(--sec-col-2--max-height__on-l);
+
+      figure {
+        aspect-ratio: var(--sec-col-2--img-aspect-ratio__on-l);
+
+        &.img--aspect-ratio-16-9__on-l {
+          aspect-ratio: 16 / 9;
+        }
+
+        &.img--aspect-ratio-16-10__on-l {
+          aspect-ratio: 16 / 10;
+        }
+
+        &.img--aspect-ratio-16-12__on-l {
+          aspect-ratio: 16 / 12;
+        }
+
+        &.img--aspect-ratio-16-13__on-l {
+          aspect-ratio: 16 / 13;
+        }
+
+        &.img--aspect-ratio-16-14__on-l {
+            aspect-ratio: 16 / 14;
+          }
+      }
+
+      &.sec-col-2-fw-bg--img-auto-height figure {
+        position: relative;
+      }
+    }
+  }
+}
+
+/* tablet 767 __on-m */
+@include tablet-767 {
+  .section-col-2--fw-bg {
+    .sec-col-2-fw-bg--left,
+    .sec-col-2-fw-bg--right {
+      width: var(--body-container-w__on-m);
+      max-width: var(--body-container-mw);
+    }
+
+    .sec-col-2-fw-bg--left-fw,
+    .sec-col-2-fw-bg--right-fw {
+
+      figure {
+        aspect-ratio: var(--sec-col-2--img-aspect-ratio__on-m);
+
+        &.img--aspect-ratio-16-9__on-m {
+          aspect-ratio: 16 / 9;
+        }
+
+        &.img--aspect-ratio-16-10__on-m {
+          aspect-ratio: 16 / 10;
+        }
+
+        &.img--aspect-ratio-16-12__on-m {
+          aspect-ratio: 16 / 12;
+        }
+
+        &.img--aspect-ratio-16-13__on-m {
+          aspect-ratio: 16 / 13;
+        }
+
+        &.img--aspect-ratio-16-14__on-m {
+            aspect-ratio: 16 / 14;
+          }
+      }
+
+      &.sec-col-2-fw-bg--img-auto-height figure {
+        position: relative;
+      }
+    }
+  }
+}
+
+/* mobile-440 __on-s */
+@include mobile-440 {
+}

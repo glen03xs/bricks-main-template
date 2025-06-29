@@ -1,0 +1,99 @@
+/**************
+   Forms - CF7 Add on Classes Section CTA
+***************/
+/****** Variables *******/
+.bsd-form-section-cta {
+  --form-btn-wrap-mt: var(--space-s);
+  --bf-nl-section-cta-form-btn-inline-mxw: 630px;
+  --bf-section-cta-width: 630px;
+}
+
+/****** CSS *******/
+/****** Forms *******/
+.bsd-form-section-cta {
+  &.bf-nl-section-cta-form-btn-inline {
+    max-width: var(--bf-nl-section-cta-form-btn-inline-mxw);
+
+    .form--inner-wrap {
+      display: flex;
+      column-gap: var(--space-4xs);
+
+      .form-row {
+        row-gap: var(--form-row--row-gap);
+        width: 100%;
+      }
+
+      .form-btn-wrap {
+        margin-top: 0;
+      }
+    }
+
+    .form-row {
+      display: flex;
+      column-gap: var(--space-4xs);
+    }
+  }
+
+  &.bf-nl-section-cta-form-btn-stacked {
+    max-width: 480px;
+
+    .form-row.nl-base {
+      display: flex;
+      flex-direction: column;
+      row-gap: var(--form-row--row-gap);
+    }
+  }
+
+  &.bf-nl-section-cta-mxw-custom {
+    max-width: 860px;
+  }
+
+  &.bf-nl-section-cta-mxw-860 {
+    max-width: 860px;
+  }
+
+  &.bf-nl-section-cta-mxw-630 {
+    max-width: 630px;
+  }
+}
+
+/**************
+Responsive
+***************/
+
+/* tablet-992 | __on-l */
+@include tablet-992 {
+}
+
+/******  Tablet 767 *******/
+@include tablet-767 {
+  .bsd-form-section-cta {
+    &.bf-nl-section-cta-form-btn-inline {
+      max-width: 630px;
+
+      .form--inner-wrap {
+        flex-wrap: wrap;
+
+        .form-row {
+          row-gap: 0;
+        }
+
+        .form-btn-wrap {
+          margin-top: var(--form-btn-wrap-mt);
+        }
+      }
+
+      .form-btn-wrap {
+        margin-top: var(--form-btn-wrap-mt);
+      }
+    }
+
+    &.bf-nl-section-cta-form-btn-inline-mxw-500__on-m {
+      max-width: 500px;
+    }
+  }
+}
+
+/******  Mobile 480 *******/
+@include mobile-480 {
+}

@@ -1,0 +1,16 @@
+/**************
+ Blog Blocks - Archive
+***************/
+.bm-sb-archive-blocks {
+  .bm-sb-archive-blocks--main {
+    width: 100%;
+
+    &.bm-sb-archive-blocks--list-2-col {
+      .wp-block-archives-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+      }
+    }
+  }
+}

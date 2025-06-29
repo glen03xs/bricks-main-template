@@ -1,0 +1,64 @@
+/**************
+ Card Item - Icon | Content
+***************/
+/****** Variables *******/
+.card-item--icon-content {
+  --card-item--icon-pd: 0;
+  --card-item--icon-color: var(--primary);
+  --card-item--icon-size: clamp(2.5rem, calc(2.324rem + 0.751vw), 3rem); /* min: 40px, max: 48px */
+  --card-item--icon-mb: 0;
+  --card-item--icon-svg-height: 60px;
+  --card-item--icon-svg-width: 60px;
+}
+
+/****** CSS *******/
+.card-item {
+  &.card-item--icon-content {
+    .card-item--icon {
+      padding: var(--card-item--icon-pd);
+      margin-bottom: var(--card-item--icon-mb);
+  
+      i,
+      .brxe-icon {
+        color: var(--card-item--icon-color);
+        fill: var(--card-item--icon-color);
+        font-size: var(--card-item--icon-size);
+      }
+
+      .icon-svg {
+        width: var(--card-item--icon-svg-width); 
+        height: var(--card-item--icon-svg-height);
+
+        * {
+          fill: var(--card-item--icon-color);
+        }
+      }
+    }
+  }
+}
+/**************
+Responsive
+***************/
+/* desktop-1440 | __on-3xl */
+@include desktop-1440 {
+}
+
+/* desktop-1366 | __on-2xl */
+@include desktop-1366 {
+}
+
+/* desktop-1200 | __on-xl */
+@include desktop-1200 {
+}
+
+/* tablet-992 | __on-l */
+@include tablet-992 {
+}
+
+/* tablet 767 __on-m */
+@include tablet-767 {
+}
+
+/* mobile-440 __on-s */
+@include mobile-440 {
+}

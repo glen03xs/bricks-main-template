@@ -1,0 +1,211 @@
+/**************
+   UI - Buttons Main
+  ***************/
+  .bricks-button {
+    // Main Button Settings
+    --btn-border-width: 0;
+    --btn-border-radius: 0;
+    --btn-border-color: var(--primary-btn-bg-color);
+    --btn-border-color__hover: var(--primary);
+  
+    --btn-font-weight: 600;
+    --btn-font-family: var(--font-heading);
+    // --btn-font-size: var(--text-m);
+    --btn-letter-spacing: .5px;
+  
+    --btn-color: var(--text-light);
+    --btn-color__hover: var(--primary);
+  
+    --btn-pd-tb: clamp(1rem, calc(0.956rem + 0.188vw), 1.125rem); /* min: 16px, max: 18px */
+    --btn-pd-lr: clamp(1.5rem, calc(1.368rem + 0.563vw), 1.875rem); /* min: 24px, max: 30px */
+  
+    --btn-sm-pd-tb: var(--space-7xs);
+    --btn-sm-pd-lr: var(--space-3xs);
+  
+    --btn-min-width: clamp(9.75rem, calc(9.442rem + 1.315vw), 10.625rem); /* min: 156px, max: 170px */
+    --btn-transition: .3s all ease;
+  
+      // Primary button color
+    --primary-btn-font-family: var(--btn-font-family);
+    --primary-btn-font-size: var(--btn-font-size);
+    --primary-btn-font-weight: var(--btn-font-weight);
+    --primary-btn-letter-spacing: var(--btn-letter-spacing);
+    --primary-btn-letter-case: uppercase;
+  
+    --primary-btn-color: var(--btn-color);
+    --primary-btn-color__hover: var(--btn-color); // Options: --primary__hover | Transparent
+    
+    --primary-btn-bg-color: var(--primary);
+    --primary-btn-bg-color__hover: var(--primary__hover);
+  
+    --primary-btn-border-width: var(--btn-border-width);
+    --primary-btn-border-radius: var(--btn-border-radius);
+  
+    // Alt button color
+    --alt-btn-font-size: var(--btn-font-size);
+    --alt-btn-font-weight: var(--btn-font-weight);
+    --alt-btn-font-family: var(--btn-font-family);
+    --alt-btn-letter-spacing: var(--btn-letter-spacing);
+    --alt-btn-letter-case: uppercase;
+  
+    --alt-btn-color: var(--btn-color);
+    --alt-btn-color__hover: var(--btn-color); // Options: --secondary__hover | Transparent
+    
+    --alt-btn-bg-color: var(--secondary);
+    --alt-btn-bg-color__hover: var(--secondary__hover);
+  
+    --alt-btn-border-width: var(--btn-border-width);
+    --alt-btn-border-radius: var(--btn-border-radius);
+    --alt-btn-border-color: var(--secondary);
+    --alt-btn-border-color__hover: var(--btn-border-color__hover);
+  
+    // Small Button
+    --btn-small-font-size: var(--text-s);
+    --btn-small-min-width: auto;
+  
+     // Outline Button
+    --outline-btn-color: var(--primary);
+    --outline-btn-color_hover: var(--text-light);
+    --outline-btn-bg-color_hover: var(--primary);
+    --outline-btn-border-color: var(--primary);
+    --outline-btn-border-color_hover: var(--primary);
+    --outline-btn-border-width: 2px;
+  
+    // Padding
+    --primary-btn-pd-tb: var(--btn-pd-tb);
+    --primary-btn-pd-lr: var(--btn-pd-lr);
+  
+    --alt-btn-sm-pd-tb: var(--btn-pd-tb);
+    --alt-btn-sm-pd-lr: var(--btn-pd-lr);
+  }
+  
+  /****** Button *******/
+  .bricks-button {
+    font-size: var(--primary-btn-font-size);
+    font-weight: var(--primary-btn-font-weight);
+    font-family: var(--primary-btn-font-family);
+  
+    background-color: var(--primary-btn-bg-color);
+    color: var(--primary-btn-color);
+  
+    padding-top: var(--primary-btn-pd-tb);
+    padding-right: var(--primary-btn-pd-lr);
+    padding-bottom: var(--primary-btn-pd-tb);
+    padding-left: var(--primary-btn-pd-lr);
+  
+    border-color: var(--btn-border-color);
+    
+    border-width: var(--primary-btn-border-width);
+    border-radius: var(--primary-btn-border-radius);
+  
+    text-transform: var(--primary-btn-letter-case);
+    letter-spacing: var(--primary-btn-letter-spacing);
+  
+    min-width: var(--btn-min-width);
+    transition: var(--btn-transition) ;
+    
+    border-style: solid;
+    line-height: 1;
+    cursor: pointer;
+    white-space: nowrap;
+  
+    &:hover {
+      color: var(--primary-btn-color__hover);
+      background-color: var(--primary-btn-bg-color__hover);
+      border-color: var(--btn-border-color__hover);
+    }
+  
+    &.btn--alt-color {
+      font-size: var(--alt-btn-font-size);
+      font-weight: var(--alt-btn-font-weight);
+      font-family: var(--alt-btn-font-family);
+      text-transform: var(--alt-btn-letter-case);
+      letter-spacing: var(--alt-btn-letter-spacing);
+      
+      color: var(--alt-btn-color);
+      background-color: var(--alt-btn-bg-color);
+    
+      border-color: var(--alt-btn-border-color);
+  
+      border-width: var(--alt-btn-border-width);
+      border-radius: var(--alt-btn-border-radius);
+  
+      &:hover {
+        color: var(--alt-btn-color__hover);
+        background-color: var(--alt-btn-bg-color__hover);
+        border-color: var(--alt-btn-border-color__hover);
+      }
+    }
+  
+    &.btn--white-color {
+      background-color: #ffffff;
+      border-color: #ffffff;
+      color: var(--primary);
+  
+      &:hover {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        color: #ffffff;
+      }
+    }
+  
+    &.btn--small {
+      font-size: var(--btn-small-font-size);
+      padding-top: var(--btn-sm-pd-tb);
+      padding-right: var(--btn-sm-pd-lr);
+      padding-bottom: var(--btn-sm-pd-tb);
+      padding-left: var(--btn-sm-pd-lr);
+      min-width: var(--btn-small-min-width);
+    }
+  
+    &.btn-outline {
+      color: var(--outline-btn-color);
+      background-color: transparent;
+      border-color: var(--outline-btn-border-color);
+      border-width: var(--outline-btn-border-width);
+      padding: calc(var(--btn-pd-tb) - var(--outline-btn-border-width)) calc(var(--btn-pd-lr) - var(--outline-btn-border-width));
+  
+      &:hover {
+        color: var(--outline-btn-color_hover);
+        background-color: var(--outline-btn-bg-color_hover);
+        border-color: var(--outline-btn-border-color_hover);
+      }
+    }
+
+    &.btn--hvr-outline {
+        border-width: 2px;
+
+        padding: calc(var(--btn-pd-tb) - var(--outline-btn-border-width)) calc(var(--btn-pd-lr) - var(--outline-btn-border-width));
+        &:hover {
+          color: var(--btn-color__hover);
+          border-color: var(---btn-border-color__hover);
+          background-color: transparent;
+        }
+      }
+  
+    &.btn-outline-light {
+      color: var(--text-light);
+      background-color: transparent;
+      border-color: var(--bg-light);
+      border-width: var(--outline-btn-border-width);
+  
+      &:hover {
+        color: var(--outline-btn-color_hover);
+        background-color: var(--outline-btn-bg-color_hover);
+        border-color: var(--outline-btn-border-color_hover);
+      }
+    }
+  
+    &.btn--hvr-outline-light {
+      &:hover {
+        color: var(--text-light);
+        border-color: var(--text-light);
+        background-color: transparent;
+      }
+    }
+
+    &.btn--rounded {
+        border-radius: 50px;
+      }
+  }
+  

@@ -5,6 +5,8 @@
   // About Block
   --fblk-about-text-mxw: 440px;
   --fblk-about-text-mxw__on-l: 100%;
+  --fblk-about-text-color: var(--text-footer);
+  --fblk-about-text-size: var(--font-p);
 
   // Nav Block
   --fblk-nav-menu-gap: var(--space-5xs);
@@ -22,7 +24,7 @@
   // Contact Block
   --fblk-contact-gap: var(--space-3xs);
   --fblk-contact-text-color: inherit;
-  --fblk-contact-text-link-color: red;
+  // --fblk-contact-text-link-color: initial;
   --fblk-contact-text-link-color-hover: var(--primary);
   // --fblk-contact-text-link-decor: underline;
   --fblk-contact-text-size: inherit;
@@ -54,6 +56,9 @@
     max-width: var(--fblk-about-text-mxw);
 
     p {
+      color: var(--fblk-about-text-color);
+      font-size: var(--fblk-about-text-size);
+
       &:last-child {
         margin-bottom: 0;
       }

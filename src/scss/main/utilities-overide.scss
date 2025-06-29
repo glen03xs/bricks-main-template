@@ -77,6 +77,10 @@
 }
 
 // Max width and width
+.t--h-100 {
+  height: 100%;
+
+}
 .t--hw-100 {
   height: 100%;
   width: 100%;
@@ -166,24 +170,54 @@
   justify-content: center;
 }
 
+.t--flex-just--end {
+  justify-content: end;
+}
+
 .t--flex-just--space-between {
   justify-content: space-between;
 }
 
+// Max width - Computed .t--mxw-1000px
+@mixin generate-max-width-px($start, $end, $step) {
+  $i: $start; // Initialize the loop variable
+  @while $i <= $end {
+    .t--mxw-#{$i}px {
+      max-width: #{$i}px;
+    }
+    $i: $i + $step; // Increment by $step
+  }
+}
+
+@include generate-max-width-px(150, 1100, 5);
+
+// Width .t--w-92
+@mixin generate-width-pct($start, $end, $step) {
+  $i: $start; // Initialize the loop variable
+  @while $i <= $end {
+    .t--w-#{$i} {
+      width: unquote($i + "%");
+    }
+    $i: $i + $step; // Increment by $step
+  }
+}
+
+// Example usage of the mixin
+@include generate-width-pct(50, 100, 2);
 
 /**************
 Responsive
 ***************/
-/* desktop-1440 | __on-3xl */
-@include desktop-1440 {
-}
 
 /* desktop-1366 | __on-2xl */
 @include desktop-1366 {
+  .t--w-100__on-2xl {
+    width: 100%;
+  }
 }
 
-/* desktop-1200 | __on-xl */
-@include desktop-1200 {
+/******  Desktop 1200 | __on-xl *******/
+@media (max-width: 1200px) {
   // Margins
   .t--no-m__on-xl {
     margin: 0 !important;
@@ -222,10 +256,34 @@ Responsive
   .t--flex-wrap--wrap__on-xl {
     flex-wrap: wrap;
   }
+
+  // Max width - Computed
+  @mixin generate-max-width-px__on-xl($start, $end, $step) {
+    $i: $start; // Initialize the loop variable
+    @while $i <= $end {
+      .t--mxw-#{$i}px__on-xl {
+        max-width: #{$i}px;
+      }
+      $i: $i + $step; // Increment by $step
+    }
+  }
+  @include generate-max-width-px__on-xl(150, 1100, 5);
+
+  // Width
+  @mixin generate-width-pct__on-xl($start, $end, $step) {
+    $i: $start; // Initialize the loop variable
+    @while $i <= $end {
+      .t--w-#{$i}__on-xl {
+        width: unquote($i + "%");
+      }
+      $i: $i + $step; // Increment by $step
+    }
+  }
+  @include generate-width-pct__on-xl(50, 100, 2);
 }
 
-/* tablet-992 | __on-l */
-@include tablet-992 {
+/******  Tablet 992 | __on-l *******/
+@media (max-width: 992px) {
   .t--no-m__on-l {
     margin: 0 !important;
   }
@@ -234,7 +292,7 @@ Responsive
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .t--auto-m-lr-forced__on-l {
     margin-left: auto !important;
     margin-right: auto !important;
@@ -269,11 +327,39 @@ Responsive
   .t--flex-dir--row-rev__on-l {
     flex-direction: row-reverse;
   }
+
+  // Max width - Computed
+  @mixin generate-max-width-px__on-l($start, $end, $step) {
+    $i: $start; // Initialize the loop variable
+    @while $i <= $end {
+      .t--mxw-#{$i}px__on-l {
+        max-width: #{$i}px;
+      }
+      $i: $i + $step; // Increment by $step
+    }
+  }
+  @include generate-max-width-px__on-l(150, 1100, 5);
+
+  // Width - t--w-100__on-l
+  @mixin generate-width-pct__on-l($start, $end, $step) {
+    $i: $start; // Initialize the loop variable
+    @while $i <= $end {
+      .t--w-#{$i}__on-l {
+        width: unquote($i + "%");
+      }
+      $i: $i + $step; // Increment by $step
+    }
+  }
+  @include generate-width-pct__on-l(50, 100, 2);
+
+  // Max Width - Static
+  .t--mxw-100__on-l {
+    max-width: 100%;
+  }
 }
 
-/* tablet 767 __on-m */
-@include tablet-767 {
-
+/******  Tablet 767 | __on-m *******/
+@media (max-width: 767px) {
   .t--auto-m-lr__on-m {
     margin-left: auto;
     margin-right: auto;
@@ -300,10 +386,62 @@ Responsive
   .t--flex-dir--row-rev__on-m {
     flex-direction: row-reverse;
   }
+
+  // Flex Justify
+  .t--flex-justify--start__on-m {
+    justify-content: start;
+  }
+  .t--flex-justify--center__on-m {
+    justify-content: center;
+  }
+
+  .t--flex-justify--end__on-m {
+    justify-content: end;
+  }
+
+  .t--flex-align--start__on-m {
+    justify-content: center;
+  }
+  .t--flex-align--center__on-m {
+    justify-content: center;
+  }
+
+  .t--flex-align--end__on-m {
+    justify-content: end;
+  }
+
+  // Max width - Computed
+  @mixin generate-max-width-px__on-m($start, $end, $step) {
+    $i: $start; // Initialize the loop variable
+    @while $i <= $end {
+      .t--mxw-#{$i}px__on-m {
+        max-width: #{$i}px;
+      }
+      $i: $i + $step; // Increment by $step
+    }
+  }
+  @include generate-max-width-px__on-m(150, 1100, 5);
+
+  // Width
+  @mixin generate-width-pct__on-m($start, $end, $step) {
+    $i: $start; // Initialize the loop variable
+    @while $i <= $end {
+      .t--w-#{$i}__on-m {
+        width: unquote($i + "%");
+      }
+      $i: $i + $step; // Increment by $step
+    }
+  }
+  @include generate-width-pct__on-m(50, 100, 2);
+
+  // Max Width - Static
+  .t--mxw-100__on-m {
+    max-width: 100%;
+  }
 }
 
-/* mobile-440 __on-s */
-@include mobile-440 {
+/******  Mobile 440 | __on-s *******/
+@media (max-width: 440px) {
   // Flex Direction
   .t--flex-dir--col__on-s {
     flex-direction: column;
@@ -319,5 +457,34 @@ Responsive
 
   .t--flex-dir--row-rev__on-s {
     flex-direction: row-reverse;
+  }
+
+  // Max width - Computed
+  @mixin generate-max-width-px__on-s($start, $end, $step) {
+    $i: $start; // Initialize the loop variable
+    @while $i <= $end {
+      .t--mxw-#{$i}px__on-s {
+        max-width: #{$i}px;
+      }
+      $i: $i + $step; // Increment by $step
+    }
+  }
+  @include generate-max-width-px__on-s(150, 1100, 5);
+
+  // Width
+  @mixin generate-width-pct__on-s($start, $end, $step) {
+    $i: $start; // Initialize the loop variable
+    @while $i <= $end {
+      .t--w-#{$i}__on-s {
+        width: unquote($i + "%");
+      }
+      $i: $i + $step; // Increment by $step
+    }
+  }
+  @include generate-width-pct__on-s(50, 100, 2);
+
+  // Max Width - Static
+  .t--mxw-100__on-s {
+    max-width: 100%;
   }
 }

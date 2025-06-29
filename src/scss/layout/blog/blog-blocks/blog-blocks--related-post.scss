@@ -1,0 +1,219 @@
+/**************
+ Blog Blocks - Related Post
+***************/
+// Variables
+.blog-single-related-post {
+  --bs-related-post--title-color: var(--text-title);
+  --bs-related-post--title-font-size: var(--text-3xl);
+  --bs-related-post--title-font-weight: 600;
+  --bs-related-post--title-mb: var(--space-xs);
+
+  --bs-related-post--grid-columns: repeat(3, 1fr);
+  --bs-related-post--grid-column-gap: var(--space-s);
+}
+
+//CSS
+/****** Blocks - Related Post *******/
+.blog-single-related-post {
+}
+
+.blog-single-related-post--main {
+  .bs-related-post--main-title {
+    color: var(--bs-related-post--title-color);
+    font-size: var(--bs-related-post--title-font-size);
+    font-weight: var(--bs-related-post--title-font-weight);
+    margin-bottom: var(--bs-related-post--title-mb);
+  }
+}
+
+.blog-single-related-post--main-block {
+  .related-posts {
+    grid-template-columns: var(--bs-related-post--grid-columns);
+    grid-auto-flow: unset;
+    column-gap: var(--bs-related-post--grid-column-gap);
+
+    .repeater-item {
+      height: 497px;
+      display: flex;
+      position: relative;
+      margin-bottom: 0;
+
+      &::before {
+        content: "";
+        background-image: url("https://bsd-template.local/wp-content/uploads/no-image-600px.png");
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        max-height: 260px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border: 1px solid #eeeeee;
+        background-position: center;
+        z-index: -1;
+      }
+
+      figure {
+        margin-bottom: var(--space-2xs);
+
+        img {
+          height: 260px;
+          // aspect-ratio: 16 / 10;
+        }
+      }
+
+      .post-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+
+        h3.dynamic {
+          font-size: var(--text-xl);
+          font-weight: 600;
+          margin-bottom: var(--space-6xs);
+
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          line-height: 1.2;
+          height: 54px;
+
+          a {
+          }
+        }
+
+        p {
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          height: 72px;
+        }
+
+        h5 {
+          font-size: var(--text-m);
+          font-weight: 400;
+          margin-bottom: var(--space-5xs);
+        }
+
+        h6 {
+          margin-top: var(--space-2xs);
+          font-size: var(--text-m);
+          font-weight: 400;
+          text-transform: capitalize;
+
+          &:hover a::after {
+            transform: translateX(6px);
+          }
+
+          a {
+            color: var(--primary);
+
+            &:hover::after {
+              transform: translateX(6px);
+            }
+
+            &::after {
+              content: "\f061";
+              font-family: "Font Awesome\ 6 Solid";
+              margin-left: 8px;
+              transition: all 0.3s ease-in-out;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/**************
+Responsive
+***************/
+/* desktop-1440 | __on-3xl */
+@include desktop-1440 {
+}
+
+/* desktop-1366 | __on-2xl */
+@include desktop-1366 {
+}
+
+/* desktop-1200 | __on-xl */
+@include desktop-1200 {
+}
+
+/* tablet-992 | __on-l */
+@include tablet-992 {
+  .blog-single-related-post--main-block {
+    .related-posts {
+      grid-template-columns: 1fr;
+      grid-auto-flow: unset;
+      row-gap: var(--space-l);
+
+      .repeater-item {
+        height: 100%;
+
+        &::before {
+          //   content: none;
+          max-height: 380px;
+        }
+
+        figure {
+          img {
+            height: 380px;
+          }
+        }
+
+        .post-content {
+          h3.dynamic {
+            height: initial;
+          }
+
+          p {
+            height: initial;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* tablet 767 __on-m */
+@include tablet-767 {
+  .blog-single-related-post--main-block {
+    .related-posts {
+      .repeater-item {
+        &::before {
+          max-height: 320px;
+        }
+
+        figure {
+          img {
+            height: 320px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* mobile-440 __on-s */
+@include mobile-440 {
+
+    .blog-single-related-post--main-block {
+        .related-posts {
+          .repeater-item {
+            &::before {
+              max-height: 200px;
+            }
+    
+            figure {
+              img {
+                height: 200px;
+              }
+            }
+          }
+        }
+      }
+}

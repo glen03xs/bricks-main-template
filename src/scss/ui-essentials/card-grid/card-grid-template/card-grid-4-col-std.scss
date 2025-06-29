@@ -1,0 +1,86 @@
+/**************
+ Card Grid - 4 Column Standard
+***************/
+/****** Variables *******/
+.cards--column-4-std {
+  --cards-col-4--col-no__on-l: 1fr;
+  --cards-col-4--col-no__on-m: 1fr;
+  --cards-col-4--col-gap: var(--space-s);
+  --cards-col-4--row-gap: clamp(2.75rem, calc(2.618rem + 0.563vw), 3.125rem); /* min: 44px, max: 50px */
+}
+
+/****** CSS *******/
+.cards--column-4-std {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-left: 0;
+  margin: 0;
+
+  &.cards--w-col-row-gap {
+    column-gap: var(--cards-col-4--col-gap);
+    row-gap: var(--cards-col-4--row-gap);
+  }
+}
+
+/**************
+Responsive
+***************/
+/* desktop-1440 | __on-3xl */
+@include desktop-1440 {
+}
+
+/* desktop-1366 | __on-2xl */
+@include desktop-1366 {
+}
+
+/* desktop-1200 | __on-xl */
+@include desktop-1200 {
+  .cards--column-4-std {
+    &.cards-column-4--col-2__on--xl {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &.cards-column-4--col-1__on--xl {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+/* tablet-992 | __on-l */
+@include tablet-992 {
+  .cards--column-4-std {
+    grid-template-columns: var(--cards-col-3--col-no__on-l);
+
+    &.cards-column-4--col-2__on--l {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &.cards-column-4--col-1__on--l {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+/* tablet 767 __on-m */
+@include tablet-767 {
+  .cards--column-4-std {
+    grid-template-columns: var(--cards-col-3--col-no__on-m);
+
+    &.cards-column-4--col-2__on--m {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &.cards-column-4--col-1__on--m {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+/* mobile-440 __on-s */
+@include mobile-440 {
+  .cards--column-4-std {
+    &.cards-column-4--col-1__on--s {
+      grid-template-columns: 1fr;
+    }
+  }
+}

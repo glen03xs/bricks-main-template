@@ -128,6 +128,7 @@ Responsive
     width: 100%;
     max-width: 100%;
   }
+  
 }
 
 /* desktop-1200 | __on-xl */
@@ -174,6 +175,11 @@ Responsive
   .container-body-mxw-88__on-l {
     max-width: 88%;
   }
+
+  .container-body-fw {
+    max-width: var(--body-container-fw-mw);
+    width: var(--body-container-fw-w);
+  }
 }
 
 /* Tablet 767 __on-m */
@@ -216,6 +222,11 @@ Responsive
 
   .container-body-mxw-88__on-m {
     max-width: 88%;
+  }
+
+  .container-body-fw {
+    max-width: var(--body-container-fw-mw);
+    width: var(--body-container-fw-w);
   }
 }
 

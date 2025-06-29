@@ -1,0 +1,149 @@
+/**************
+ Variables
+***************/
+
+/**************
+ base/base.scss
+***************/
+:root {
+  //  Containers 
+  --header-container-w: 1340px;
+  --header-container-mw: 92%;
+  --header-container-w__on-3xl: var(
+    --header-container-w
+  ); // Default: var(--header-container-w)
+  --header-container-mw__on-3xl: var(
+    --header-container-mw
+  ); // Default: var(--header-container-mw)
+  --header-container-mw__on-m: 90%;
+  --header-container-pd-lr: 0;
+  --header-container-pd-lr__on-3xl: var(
+    --header-container-pd-lr
+  ); // Default: var(--header-container-pd-lr)
+
+  --hero-container-w: 1340px;
+  --hero-container-mw: 92%;
+  --hero-container-mw__on-m: 90%;
+
+  --body-container-w: 1340px;
+  --body-container-w__on-3xl: 1160px;
+  --body-container-w__on-xl: 1160px;
+  --body-container-w__on-l: 720px;
+
+  --body-container-mw: 92%;
+  --body-container-mw__on-m: 90%;
+  --body-container-fw-w: 100%;
+  --body-container-fw-mw: 100%;
+
+  --blog-container-w: 870px;
+  --blog-container-mw: 92%;
+
+  --footer-container-w: 1340px;
+  --footer-container-mw: 92%;
+  --footer-container-mw__on-m: 90%;
+
+  //  Transition
+  --transition-base: all 0.3s ease-in-out;
+}
+
+/**************
+ base/misc.scss
+***************/
+#cookie-notice {
+  --cookie-notice--bg-color: var(--primary);
+  --cookie-notice--bg-opacity: 1;
+  --cookie-notice--pd-tb: var(--space-2xs);
+
+  --cookie-notice--content-color: var(--text-light);
+  --cookie-notice--content-font-family: var(--font-body);
+  --cookie-notice--content-font-size: var(--text-xs);
+  --cookie-notice--content-font-weight: 400;
+
+  --cookie-notice--btn-color: var(--text-light);
+  --cookie-notice--btn-bg: var(--secondary);
+  --cookie-notice--btn-font-family: var(--cookie-notice--content-font-family);
+  --cookie-notice--btn-font-size: var(--cookie-notice--content-font-size);
+  --cookie-notice--btn-font-weight: var(--cookie-notice--content-font-weight);
+  --cookie-notice--btn-pd-tb: var(--space-6xs);
+  --cookie-notice--btn-pd-lr: var(--space-4xs);
+
+  --cookie-notice--icon-close-color: var(--bg-light-gray);
+  --cookie-notice--icon-close-size: var(--space-2xs);
+}
+
+/**************
+ base/theme.scss
+***************/
+
+/**************
+ components/components.scss
+***************/
+
+/**************
+ custom/custom.scss
+***************/
+
+/**************
+ footer/footer-base.scss
+***************/
+.footer-main {
+    --footer-main-bg-color: var(--bg-light);
+    --footer-main-color: var(--text-footer);
+    --footer-main-pd: var(--space-2xl) 0;
+    --footer-main-pd__on_l: var(--space-2xl) 0;
+    --footer-main-box-shadow: 0px -2px 30px 0px rgba(34, 34, 34, 0.1);
+    --footer-main-row--gap: var(--space-l);
+  }
+/**************
+ footer/footer-block.scss
+***************/
+
+/**************
+ footer/footer-block-item.scss
+***************/
+.footer-block {
+    // About Block
+    --fblk-about-text-mxw: 440px;
+    --fblk-about-text-mxw__on-l: 100%;
+  
+    // Nav Block
+    --fblk-nav-menu-gap: var(--space-5xs);
+    --fblk-nav-text-color: var(--text-footer);
+    --fblk-nav-text-color-hover: var(--primary);
+    --fblk-nav-text-size: inherit;
+    --fblk-nav-text-case: inherit;
+    --fblk-nav-text-weight: inherit;
+    --fblk-nav-icon-text-gap: var(--space-5xs);
+    --fblk-nav-icon: "\f061";
+    --fblk-nav-icon-ff: Font Awesome\ 6 Solid;
+    --fblk-nav-icon-transition: all 0.3s ease-in-out;
+    --fblk-nav-icon-color: inherit;
+  
+    // Contact Block
+    --fblk-contact-gap: var(--space-3xs);
+    --fblk-contact-text-color: inherit;
+    // --fblk-contact-text-link-color: initial;
+    --fblk-contact-text-link-color-hover: var(--primary);
+    // --fblk-contact-text-link-decor: underline;
+    --fblk-contact-text-size: inherit;
+    --fblk-contact-text-case: inherit;
+    --fblk-contact-text-weight: inherit;
+    --fblk-contact-icon-text-gap: var(--space-s);
+  
+    // Social Icon BG
+    --fblk-contact-social-mt: var(--space-s);
+    --fblk-contact-social-icon-size: var(--text-2xl);
+    --fblk-contact-social-icon-gap: var(--space-2xs);
+    --fblk-contact-social-icon-color: inherit;
+    --fblk-contact-social-icon-color-hover: var(--primary-black);
+  
+    --fblk-contact-social-icon-bg: var(--primary);
+    --fblk-contact-social-icon-bg-hover: var(--primary);
+    --fblk-contact-social-icon-pd: 2px;
+    --fblk-contact-social-icon-border-radius: 52%;
+    --fblk-contact-social-icon-height: 28px;
+    --fblk-contact-social-icon-width: var(--fb-social-icon-height);
+  }
+/**************
+ footer/footer-bottom.scss
+***************/

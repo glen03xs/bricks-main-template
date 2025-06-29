@@ -1,0 +1,248 @@
+/**************
+ Car Grid
+***************/
+/****** Variables *******/
+.cards--column-2 {
+  --cards-col-2--col-gap: var(--space-xs);
+  --cards-col-2--row-gap: var(--space-m);
+}
+
+.cards--column-3 {
+  --cards-col-3--col-gap: var(--space-xs);
+  --cards-col-3--row-gap: var(--space-m);
+}
+
+.cards--column-4 {
+  --cards-col-4--col-gap: var(--space-xs);
+  --cards-col-4--row-gap: var(--space-m);
+}
+
+.cards--column-5 {
+  --cards-col-5--col-gap: var(--space-xs);
+  --cards-col-5--row-gap: var(--space-m);
+}
+
+.cards--column-6 {
+  --cards-col-6--col-gap: var(--space-xs);
+  --cards-col-6--row-gap: var(--space-m);
+}
+
+.cards--column-7 {
+  --cards-col-7--col-gap: var(--space-xs);
+  --cards-col-7--row-gap: var(--space-m);
+}
+
+.cards--column-8 {
+  --cards-col-8--col-gap: var(--space-xs);
+  --cards-col-8--row-gap: var(--space-m);
+}
+
+/****** CSS *******/
+.cards--column-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  &.cards--w-col-row-gap {
+    column-gap: var(--cards-col-2--col-gap);
+    row-gap: var(--cards-col-2--row-gap);
+  }
+}
+
+.cards--column-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  &.cards--w-col-row-gap {
+    column-gap: var(--cards-col-3--col-gap);
+    row-gap: var(--cards-col-3--row-gap);
+  }
+}
+
+.cards--column-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  &.cards--w-col-row-gap {
+    column-gap: var(--cards-col-4--col-gap);
+    row-gap: var(--cards-col-4--row-gap);
+  }
+}
+
+.cards--column-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  &.cards--w-col-row-gap {
+    column-gap: var(--cards-col-5--col-gap);
+    row-gap: var(--cards-col-5--row-gap);
+  }
+}
+
+.cards--column-6 {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+
+  &.cards--w-col-row-gap {
+    column-gap: var(--cards-col-6--col-gap);
+    row-gap: var(--cards-col-6--row-gap);
+  }
+}
+
+.cards--column-7 {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+
+  &.cards--w-col-row-gap {
+    column-gap: var(--cards-col-7--col-gap);
+    row-gap: var(--cards-col-7--row-gap);
+  }
+}
+
+.cards--column-8 {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+
+  &.cards--w-col-row-gap {
+    column-gap: var(--cards-col-8--col-gap);
+    row-gap: var(--cards-col-8--row-gap);
+  }
+}
+
+/**************
+Responsive
+***************/
+/* desktop-1440 | __on-3xl */
+@include desktop-1440 {
+  .cards--column-1__on-3xl {
+    grid-template-columns: 1fr;
+  }
+  .cards--column-2__on-3xl {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cards--column-3__on-3xl {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .cards--column-4__on-3xl {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .cards--column-5__on-3xl {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .cards--column-6__on-3xl {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* desktop-1366 | __on-2xl */
+@include desktop-1366 {
+  .cards--column-1__on-2xl {
+    grid-template-columns: 1fr;
+  }
+  .cards--column-2__on-2xl {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cards--column-3__on-2xl {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .cards--column-4__on-2xl {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .cards--column-5__on-2xl {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .cards--column-6__on-2xl {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+}
+
+/* desktop-1200 | __on-xl */
+@include desktop-1200 {
+  .cards--column-1__on-xl {
+    grid-template-columns: 1fr;
+  }
+  .cards--column-2__on-xl {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cards--column-3__on-xl {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .cards--column-4__on-xl {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .cards--column-5__on-xl {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .cards--column-6__on-xl {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* tablet-992 | __on-l */
+@include tablet-992 {
+  .cards--column-1__on-l {
+    grid-template-columns: 1fr;
+  }
+  .cards--column-2__on-l {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cards--column-3__on-l {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .cards--column-4__on-l {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .cards--column-5__on-l {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .cards--column-6__on-l {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+}
+
+/* tablet 767 __on-m */
+@include tablet-767 {
+  .cards--column-1__on-m {
+    grid-template-columns: 1fr;
+  }
+  .cards--column-2__on-m {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cards--column-3__on-m {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .cards--column-4__on-m {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .cards--column-5__on-m {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .cards--column-6__on-m {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+}
+
+/* mobile-440 __on-s */
+@include mobile-440 {
+  .cards--column-1__on-s {
+    grid-template-columns: 1fr;
+  }
+  .cards--column-2__on-s {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cards--column-3__on-s {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .cards--column-4__on-s {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .cards--column-5__on-s {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .cards--column-6__on-s {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+}

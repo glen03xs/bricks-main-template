@@ -1,0 +1,18 @@
+/**************
+ Blog Blocks - Tags
+***************/
+
+/****** Blog Blocks - Tags *******/
+.bm-sb-tags-block {
+  .bm-sb-tags-block--main {
+    
+    .wp-block-tag-cloud {
+      margin-bottom: 0;
+
+      & a:hover {
+        font-size: var(--text-3xl) !important;
+        transition: all 0.3s ease-in;
+      }
+    }
+  }
+}

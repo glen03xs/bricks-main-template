@@ -1,0 +1,104 @@
+/**************
+ Blog Blocks - Latest Post
+***************/
+
+/****** Blog Blocks - Latest Post *******/
+.bm-sb-latest-post-block {
+  color: #000;
+  .bm-sb-latest-post-block--main {
+    .widget-post-latest {
+      padding-left: 0;
+    }
+
+    .wp-block-latest-posts__list {
+      li {
+        margin-bottom: var(--space-2xs);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      .wp-block-latest-posts__featured-image {
+        margin-top: 0;
+        width: var(--space-xl);
+        height: var(--space-xl);
+        margin-bottom: 0;
+        margin-right: var(--space-4xs);;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        img {
+          width: 82px;
+        }
+      }
+
+      .wp-block-latest-posts__post-title {
+        color: var(--primary);
+        font-size: var(--font-size-main);
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.3;
+        margin-bottom: var(--space-9xs);
+      }
+
+      .wp-block-latest-posts__post-author, .wp-block-latest-posts__post-date {
+        font-size: var(--text-s);
+      }
+
+      .wp-block-latest-posts__post-author {
+        display: inline;
+        margin-right: var(--space-8xs);
+      }
+
+      .wp-block-latest-posts__post-date {
+        display: inline;
+
+        &::before { // Delete if Date only
+          content: '|';
+          margin-right: var(--space-8xs);
+        }
+      }
+    }
+  }
+}
+
+/**************
+Responsive
+***************/
+/* desktop-1440 | __on-3xl */ 
+@include desktop-1440  {}
+
+/* desktop-1366 | __on-2xl */
+@include desktop-1366  {}
+
+/* desktop-1200 | __on-xl */
+@include desktop-1200  {}
+ 
+/* tablet-992 | __on-l */
+@include tablet-992 {}
+ 
+/* tablet 767 __on-m */
+@include tablet-767 {
+  .bm-sb-latest-post-block {
+
+    .bm-sb-latest-post-block--main {
+
+      .wp-block-latest-posts__list {
+
+        .wp-block-latest-posts__featured-image {
+          width: var(--space-3xl);
+          height: var(--space-3xl);
+        }
+      }
+    }
+  }
+}
+ 
+/* mobile-440 __on-s */
+@include mobile-440 {}

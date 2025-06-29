@@ -1,0 +1,242 @@
+/**************
+   Forms 
+  ***************/
+.bsd-form {
+  --form-field-height: clamp(
+    2.75rem,
+    calc(2.618rem + 0.563vw),
+    3.125rem
+  ); /* min: 44px, max: 50px */
+  --form-textarea-height: 130px;
+  --form-field-pd-tb: 12px;
+  --form-field-pd-lr: 14px;
+  --form-field-mb: var(--space-3xs);
+
+  --form-label-font-color: var(--text-body);
+  --form-label-font-size: var(--text-xs);
+  --form-label-font-family: var(--font-body);
+  --form-label-font-weight: 400;
+  --form-label-font-style: normal;
+  --form-label-text-decoration: none;
+  --form-label-text-transform: capitalize;
+  --form-label-let-spcing: 1;
+  --form-label-mb: var(--space-6xs);
+  --form-label-required-color: var(--error);
+
+  --form-field-font-size: var(--text-s);
+  --form-field-font-family: var(--font-text);
+  --form-field-color: var(--text-body);
+  --form-field-line-height: 1;
+  --form-field-let-spcing: 1;
+  --form-field-placeholder-color: #adadad;
+  --form-field-placeholder-opacity: 1;
+
+  --form-field-border-color: #a5abb2;
+  --form-border-width: 1px;
+  --form-field-border-radius: 0;
+  --form-field-bg: var(--bg-light);
+
+  --form-row--col-gap: var(--space-3xs);
+  --form-row--row-gap: var(--space-3xs);
+
+  --form-btn-wrap-mt: var(--space-3xs);
+  --form-btn-wrap-mt__on-l: var(--form-btn-wrap-mt);
+}
+
+.bsd-form--footer-tc {
+  --form-footer--mxw: 600px;
+  --form-footer--mt: var(--space-6xs);
+  --form-footer-text--font-size: var(--text-s);
+}
+
+/****** Forms *******/
+.bsd-form {
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  .wpcf7 {
+    width: 100%;
+  }
+
+  // Form with Background Color Theme (e.g. form button set to outline/Alt )
+
+  // Child Classes
+  .form-row {
+    display: flex;
+    row-gap: var(--form-row--col-gap);
+  }
+
+  .nl-base {
+    display: block;
+
+    .form-btn-wrap {
+      margin-top: var(--space-s);
+    }
+  }
+
+  .form-group {
+    padding-bottom: 0;
+    width: 100%;
+    margin-bottom: var(--form-field-mb);
+
+    p {
+      margin: 0;
+    }
+
+    label {
+      color: var(--form-label-font-color);
+      font-size: var(--form-label-font-size);
+      font-weight: var(--form-label-font-weight);
+      font-style: var(--form-label-font-style);
+      text-decoration: var(--form-label-text-decoration);
+      text-transform: var(--form-label-text-transform);
+      margin-bottom: var(--form-label-mb);
+      letter-spacing: var(--form-label-let-spcing);
+
+      span {
+        color: var(--form-label-required-color);
+      }
+    }
+
+    &.bf-fm--label-light {
+      label {
+        color: #ffffff;
+      }
+    }
+
+    // Contact Fields Design
+    input:not(input[type="submit"]):not(input[type="file"]) {
+      padding: var(--form-field-pd-tb) var(--form-field-pd-lr);
+      height: var(--form-field-height);
+      text-align: left !important;
+
+      &::placeholder {
+        color: var(--form-field-placeholder-color);
+        opacity: var(--form-field-placeholder-opacity);
+      }
+    }
+
+    select {
+      // padding: var(--form-field-pd-tb) var(--form-field-pd-lr);
+      height: var(--form-field-height);
+    }
+
+    textarea {
+      resize: none;
+      padding: 12px 14px;
+      height: var(--form-textarea-height);
+
+      &::placeholder {
+        color: var(--form-field-placeholder-color);
+        opacity: var(--form-field-placeholder-opacity);
+      }
+    }
+
+    .wpcf7-not-valid-tip {
+      font-size: var(--text-s);
+      padding-top: var(--space-8xs);
+    }
+
+    input:not(input[type="submit"]):not(input[type="file"]),
+    textarea,
+    select {
+      width: 100%;
+      /* border-radius: 3px; */
+      margin-bottom: 0;
+      outline: none;
+      border-style: solid;
+      text-align: left;
+      letter-spacing: var(--form-field-let-spcing);
+      line-height: var(--form-field-line-height);
+      background-color: var(--form-field-bg);
+      color: var(--form-field-color);
+      font-size: var(--form-field-font-size);
+      border-color: var(--form-field-border-color);
+      border-width: var(--form-border-width);
+      border-radius: var(--form-field-border-radius);
+    }
+  }
+
+  .form-btn-wrap {
+    margin-top: var(--form-btn-wrap-mt);
+    p {
+      margin-bottom: 0;
+    }
+
+    position: relative;
+
+    .wpcf7-spinner {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      // left: 50%;
+      // transform: translateX(-50%);
+      // margin: 0;
+    }
+  }
+
+  .form--inner-wrap {
+    text-align: left;
+
+    & > .form-row:last-of-type .form-group {
+      margin-bottom: 0;
+    }
+  }
+
+  .wpcf7 form .wpcf7-response-output {
+    text-align: left;
+    margin: 2em 0.5em 1em !important;
+  }
+}
+
+.form-newsletter {
+}
+
+.form-newsletter-inline {
+  flex-wrap: nowrap;
+  column-gap: var(--space-3xs);
+
+  &.fni-single-field {
+    max-width: 600px;
+  }
+
+  .submit-button-wrapper {
+    width: auto;
+  }
+}
+
+/**************
+Responsive
+***************/
+
+/* tablet-992 | __on-l */
+@include tablet-992 {
+  .bsd-form {
+    .form-group {
+      .form-btn-wrap {
+        margin-top: var(--form-btn-wrap-mt__on-l);
+      }
+    }
+  }
+}
+
+/* tablet 767 __on-m */
+@include tablet-767 {
+  .bsd-form {
+    .form-row {
+      flex-wrap: wrap;
+    }
+  }
+
+  .form-newsletter-inline {
+    flex-wrap: wrap;
+    row-gap: var(--space-3xs);
+    max-width: 480px;
+    justify-content: center;
+  }
+}
+
+/* mobile-440 __on-s */
+@include mobile-440 {
+}

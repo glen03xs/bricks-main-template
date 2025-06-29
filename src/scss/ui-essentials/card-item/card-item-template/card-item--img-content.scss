@@ -1,0 +1,62 @@
+/**************
+ Card Item - Img | Content
+***************/
+/****** Variables *******/
+.card-item--img-content {
+  --card-item--img-pd: 0;
+  --card-item--img-transform: scale(1.05) translateY(-6px);
+  --card-item--img-aspect-ratio: 16 / 10;
+  --card-item--img-mb: 0;
+}
+
+/****** CSS *******/
+.card-item {
+  &.card-item--img-content {
+    .card-item--img {
+      padding: var(--card-item--img-pd);
+      aspect-ratio: var(--card-item--img-aspect-ratio);
+      overflow: hidden;
+      margin-bottom: var(--card-item--img-mb);
+
+      figure {
+        img {
+          transition: var(--default-transition);
+          border-radius: var(--card-item--head-border-radius);
+          width: 100%;
+          aspect-ratio: var(--card-item--img-aspect-ratio);
+          object-fit: cover;
+        }
+
+        &:hover img {
+          transform: var(--card-item--img-transform);
+        }
+      }
+    }
+  }
+}
+/**************
+Responsive
+***************/
+/* desktop-1440 | __on-3xl */
+@include desktop-1440 {
+}
+
+/* desktop-1366 | __on-2xl */
+@include desktop-1366 {
+}
+
+/* desktop-1200 | __on-xl */
+@include desktop-1200 {
+}
+
+/* tablet-992 | __on-l */
+@include tablet-992 {
+}
+
+/* tablet 767 __on-m */
+@include tablet-767 {
+}
+
+/* mobile-440 __on-s */
+@include mobile-440 {
+}

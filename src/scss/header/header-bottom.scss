@@ -1,11 +1,13 @@
 /**************
  Header - Bottom
 ***************/
-
 :root {
   --hb-height-desktop: 60px;
   --hb-height-tablet: 56px;
   --hb-height-mobile: 54px;
+}
+
+.header-bottom {
   --hb-bg: var(--secondary);
   --hb-bg-sticky: #ffffff;
   --hb-sticky-height: 110px;

@@ -1,0 +1,25 @@
+/**************
+ Blog Blocks - Newsletter Block
+***************/
+
+.bm-sb-newsletter-block {
+    &.bnb-theme-bg-hl {
+      background: var(--primary);
+      padding: var(--space-s) var(--space-xs);
+    }
+  
+    &.bnb-theme-bg-hl-bs {
+      background: var(--primary);
+      padding: var(--space-l) var(--space-xs);
+    }
+  
+    &--bs-wrap {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  
+    .submit-button-wrapper {
+      // margin-top: var(--space-3xs);
+      // width: 100%;
+    }
+  }
