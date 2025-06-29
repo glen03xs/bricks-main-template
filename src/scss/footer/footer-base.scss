@@ -6,21 +6,25 @@
   --footer-main-color: var(--text-footer);
   --footer-main-pd: var(--space-2xl) 0;
   --footer-main-pd__on_l: var(--space-2xl) 0;
+  --footer-main-box-shadow: 0px -2px 30px 0px rgba(34, 34, 34, 0.1);
+  --footer-main-row--gap: var(--space-l);
 }
 
 /****** Footer Main - Basic *******/
 .footer-main {
   padding: var(--footer-main-pd);
-  box-shadow: 0px -2px 30px 0px rgba(34, 34, 34, 0.1);
+  box-shadow: var(--footer-main-box-shadow);
   background-color: var(--footer-main-bg-color);
 
   p,
-  span, li {
+  span,
+  li {
     color: var(--footer-main-color);
     font-size: var(--footer-font-size);
   }
 
   &--row {
+    row-gap: var(--footer-main-row--gap);
     display: grid;
 
     &.fm--col-2--even {
@@ -33,6 +37,18 @@
 
     &.fm--col-3--fr-2-1-2 {
       grid-template-columns: 2fr 1fr 2fr;
+    }
+  }
+
+  /****** CSS *******/
+  .footer-main--row-flex {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+
+    & > div {
+      width: auto;
     }
   }
 
@@ -99,6 +115,15 @@ Responsive
 
       & div:nth-child(3) {
         grid-area: third;
+      }
+    }
+  }
+  .footer-main {
+    .footer-main--row-flex {
+      justify-content: start;
+
+      & > div {
+        width: 100%;
       }
     }
   }

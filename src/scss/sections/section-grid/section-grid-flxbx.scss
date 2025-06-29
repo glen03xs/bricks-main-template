@@ -1,0 +1,308 @@
+/**************
+ Section Grid Flexbox
+***************/
+
+.se--column-2-flxbx {
+  --se--col-2-row-gap: var(--space-l);
+  --se--col-2-row-gap__on-l: var(--space-l);
+  --se--col-2-row-gap__on-m: var(--space-l);
+}
+
+.section-main--row {
+}
+
+// Section Grid - Flexbox
+.se--column-2-flxbx {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+
+  & > div {
+    width: 50%; 
+  }
+
+  // Not Sure
+  &.se--col-2-cont--left {
+    padding-left: calc((100% - var(--body-container-w)) / 2);
+  }
+
+  &.se--col-2-cont--right {
+    padding-right: calc((100% - var(--body-container-w)) / 2);
+  }
+
+  &.se--col-2--55-45 {
+    & > div:nth-child(1) {
+      width: 55%;
+    }
+    & > div:nth-child(2) {
+      width: 45%;
+    }
+  }
+
+  &.se--col-2--45-55 {
+    & > div:nth-child(1) {
+      width: 45%;
+    }
+    & > div:nth-child(2) {
+      width: 55%;
+    }
+  }
+
+  &.se--col-2--60-40 {
+    & > div:nth-child(1) {
+      width: 60%;
+    }
+    & > div:nth-child(2) {
+      width: 40%;
+    }
+  }
+
+  &.se--col-2--40-60 {
+    & > div:nth-child(1) {
+      width: 40%;
+    }
+    & > div:nth-child(2) {
+      width: 60%;
+    }
+  }
+
+  &.se--col-2--65-35 {
+    & > div:nth-child(1) {
+      width: 65%;
+    }
+    & > div:nth-child(2) {
+      width: 35%;
+    }
+  }
+
+  &.se--col-2--35-65 {
+    & > div:nth-child(1) {
+      width: 35%;
+    }
+    & > div:nth-child(2) {
+      width: 65%;
+    }
+  }
+
+  &.se--col-2--66-33 {
+    & > div:nth-child(1) {
+      width: 66.6666%;
+    }
+    & > div:nth-child(2) {
+      width: 33.3333%;
+    }
+  }
+
+  &.se--col-2--33-66 {
+    & > div:nth-child(1) {
+      width: 33.3333%;
+    }
+    & > div:nth-child(2) {
+      width: 66.6666%;
+    }
+  }
+
+  &.se--col-2--70-30 {
+    & > div:nth-child(1) {
+      width: 70%;
+    }
+    & > div:nth-child(2) {
+      width: 30%;
+    }
+  }
+
+  &.se--col-2--30-70 {
+    & > div:nth-child(1) {
+      width: 30%;
+    }
+    & > div:nth-child(2) {
+      width: 70%;
+    }
+  }
+
+  &.se--col-2--75-25 {
+    & > div:nth-child(1) {
+      width: 75%;
+    }
+    & > div:nth-child(2) {
+      width: 25%;
+    }
+  }
+
+  &.se--col-2--25-75 {
+    & > div:nth-child(1) {
+      width: 25%;
+    }
+    & > div:nth-child(2) {
+      width: 75%;
+    }
+  }
+
+  &.se--col-2--80-20 {
+    & > div:nth-child(1) {
+      width: 80%;
+    }
+    & > div:nth-child(2) {
+      width: 20%;
+    }
+  }
+
+  &.se--col-2--20-80 {
+    & > div:nth-child(1) {
+      width: 20%;
+    }
+    & > div:nth-child(2) {
+      width: 80%;
+    }
+  }
+
+  //
+  .se--col-bg-l-side {
+    position: relative;
+
+    &::after {
+      content: "";
+      background-color: var(--primary);
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: -9;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .se--col-bg-r-side {
+    position: relative;
+
+    &::after {
+      content: "";
+      background-color: var(--bg-light);
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: -9;
+      top: 0;
+      left: 0px;
+    }
+  }
+}
+
+.se--column-5-flxbx {
+  display: flex !important;
+
+  flex-direction: row;
+
+  & > div,
+  & > li {
+    width: 20%;
+  }
+}
+
+.se--col-left {
+  &.se--col-container {
+    align-items: end;
+  }
+}
+.se--col-right {
+  &.se--col-container {
+    align-items: start;
+  }
+}
+
+.se--col-inner {
+  &.se--col-2--half-container {
+    width: calc(var(--body-container-w) / 2);
+  }
+}
+
+
+
+/**************
+Responsive
+***************/
+
+/* desktop-1200 | __on-xl */
+@include desktop-1200 {
+  .se--column-2-flxbx {
+    row-gap: var(--se--col-2-row-gap__on-xl);
+
+    &.se--col-1__on-xl {
+      flex-wrap: wrap;
+      & > div:nth-child(1),
+      & > div:nth-child(2) {
+        width: 100%;
+      }
+    }
+
+    .se--col-bg-l-side {
+      position: relative;
+      background-color: var(--primary);
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .se--col-bg-r-side {
+      position: relative;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+/* tablet-992 | __on-l */
+@include tablet-992 {
+  // Section Grid - Flexbox
+  .se--column-2-flxbx {
+    flex-wrap: wrap;
+    row-gap: var(--se--col-2-row-gap__on-l);
+
+    & > div:nth-child(1),
+    & > div:nth-child(2) {
+      width: 100%;
+    }
+
+    &.se--col-2-cont--lr-none__on-xl {
+      padding: 0;
+    }
+
+    &.se--col-2--60-40 {
+      & > div:nth-child(1) {
+        width: 100%;
+      }
+      & > div:nth-child(2) {
+        width: 100%;
+      }
+    }
+
+    &.se--col-2__on-l {
+      & > div {
+        width: 50%;
+      }
+    }
+  }
+
+
+}
+
+/* tablet 767 __on-m */
+@include tablet-767 {
+  .se--column-2-flxbx {
+    row-gap: var(--se--col-2-row-gap__on-m);
+  }
+
+  .se--column-2-flxbx,
+  .se-column- {
+    &.se--col-1__on-m {
+      & > div:nth-child(1),
+      & > div:nth-child(2) {
+        width: 100%;
+      }
+    }
+  }
+
+}

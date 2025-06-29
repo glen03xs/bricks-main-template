@@ -1,0 +1,60 @@
+/**************
+ Breadcrumbs
+***************/
+/****** Variables *******/
+.breadcumb--main {  
+    --brdcrmb--pd: var(--space-2xs) 0;
+    --brdcrmb--border-top: 1px solid var(--theme-light-gray);
+    --brdcrmb--border-bottom: 1px solid var(--theme-light-gray);
+    --brdcrmb--col-gap: 10px;
+    --brdcrmb--row-gap: 2px;
+}
+
+/****** CSS *******/
+.breadcumb {  
+
+}
+
+.breadcumb--main {
+    padding: var(--brdcrmb--pd);
+    width: 100%;
+    border-top: var(--brdcrmb--border-top);
+    border-bottom: var(--brdcrmb--border-bottom);
+    column-gap: var(--brdcrmb--col-gap);
+    row-gap: var(--brdcrmb--row-gap);
+
+    &.bc-main-inside--w-t-pd {
+        padding-bottom: 0;
+        border: none;
+        margin-top: var(--space-xs);
+    }
+    
+    &.bc-main-inside--align-center {
+        justify-content: center;
+    }
+   
+    &.bc-main-inside--top-border {
+        border-top: var(--brdcrmb--border-top);
+    }
+  }
+
+/**************
+Responsive
+***************/
+/* desktop-1440 | __on-3xl */ 
+@include desktop-1440  {}
+
+/* desktop-1366 | __on-2xl */
+@include desktop-1366  {}
+
+/* desktop-1200 | __on-xl */
+@include desktop-1200  {}
+ 
+/* tablet-992 | __on-l */
+@include tablet-992 {}
+ 
+/* tablet 767 __on-m */
+@include tablet-767 {}
+ 
+/* mobile-440 __on-s */
+@include mobile-440 {}

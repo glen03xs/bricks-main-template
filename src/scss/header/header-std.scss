@@ -1,27 +1,31 @@
 /**************
  Header - Std  | Header Main
 ***************/
-
 :root {
+  --hm-height-desktop: 126px;
+  --hm-height-tablet: 100px;
+  --hm-height-mobile: 84px;
+}
+
+.header-main {
   --hm-logo-height: 44px;
   --hm-logo-height__on-l: 34px;
   --hm-logo-height__on-m: 26px;
 
-  --hm-height-desktop: 126px;
-  --hm-height-tablet: 100px;
-  --hm-height-mobile: 84px;
   --hm-bg: #ffffff;
   --hm-bg-sticky: #ffffff;
   --hm-sticky-height: 110px;
   --hm-sticky-height-tablet: 100px;
   --hm-sticky-height-mobile: 84px;
 
-  --hm-col--gap: var(--nav-item-gap) ;
+  --hm-col--gap: var(--nav-item-gap);
 
   --hm-icon-size: var(--text-xl);
-  --hm-search-icon-size: var(--hm-icon-size); // Default: --hm-icon-size | Use CF Text size to customize, e.g. --text-2xl |
+  --hm-search-icon-size: var(
+    --hm-icon-size
+  ); // Default: --hm-icon-size | Use CF Text size to customize, e.g. --text-2xl |
   --hm-social-icon-size: var(--text-2xl);
-  --hm-search-overlay-bg: #FFFFFF; 
+  --hm-search-overlay-bg: #ffffff;
 }
 
 .header-main {
@@ -33,6 +37,12 @@
   li,
   a:not(.bricks-button) {
     margin: 0;
+  }
+
+  &.hm--transparent {
+    position: absolute;
+    z-index: 999;
+    background: transparent;
   }
 
   &.hm--light-all {
@@ -101,7 +111,6 @@
     grid-template-columns: 1fr 1fr 1fr;
     display: grid;
   }
-
 }
 
 .header-main--col {
@@ -119,26 +128,25 @@
 }
 
 .header-main--item {
-
   &.hm-item--first {
-    order: 1
+    order: 1;
   }
   &.hm-item--second {
-    order: 2
+    order: 2;
   }
   &.hm-item--third {
-    order: 3
+    order: 3;
   }
   &.hm-item--fourth {
-    order: 4
+    order: 4;
   }
 
   &.hm-item--fifth {
-    order: 5
+    order: 5;
   }
 
   &.hm-item--last {
-    order: 99
+    order: 99;
   }
 }
 
@@ -162,7 +170,6 @@
 }
 
 .header-main--icon-search {
-
   button.toggle {
     color: var(--nav-text-color);
     height: auto;
@@ -173,7 +180,7 @@
     }
 
     &:hover {
-      color: var(--primary)
+      color: var(--primary);
     }
   }
 
@@ -190,13 +197,12 @@
   }
 
   &.hm--ic--bg-dark {
-
     .bricks-search-overlay {
       background-color: #000000;
 
       button.close {
         color: var(--text-light);
-  
+
         &:hover {
           color: var(--text-light__hover);
         }
@@ -206,19 +212,17 @@
         color: var(--text-light);
       }
 
-      input[type="search"]{
+      input[type="search"] {
         color: var(--text-light);
       }
     }
   }
 
   &.hm--ic--light-all {
-
     .bricks-search-overlay {
-
       button.close {
         color: var(--text-light);
-  
+
         &:hover {
           color: var(--text-light__hover);
         }
@@ -228,7 +232,7 @@
         color: var(--text-light);
       }
 
-      input[type="search"]{
+      input[type="search"] {
         color: var(--text-light);
       }
     }
@@ -236,45 +240,43 @@
 }
 
 .header-main--search {
-
   &.hm--s--w-250 {
-    input[type="search"]{
+    input[type="search"] {
       width: 250px;
     }
   }
 
   &.hm--s--w-300 {
-    input[type="search"]{
+    input[type="search"] {
       width: 300px;
     }
   }
 
   &.hm--s--w-350 {
-    input[type="search"]{
+    input[type="search"] {
       width: 350px;
     }
   }
 
   &.hm--s--w-400 {
-    input[type="search"]{
+    input[type="search"] {
       width: 400px;
     }
   }
 
   &.hm--s--w-450 {
-    input[type="search"]{
+    input[type="search"] {
       width: 450px;
     }
   }
 
   &.hm--s--w-500 {
-    input[type="search"]{
+    input[type="search"] {
       width: 500px;
     }
   }
 
   .bricks-search-form {
-   
     button {
       background-color: var(--primary);
       height: auto;
@@ -283,8 +285,13 @@
 }
 
 .header-main--text {
-
-  p, h1, h2, h3, h4, h5, h6 {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin: 0;
   }
 }
@@ -318,19 +325,27 @@
       }
     }
   }
-
-
 }
 
 /********* 
 Responsive
 *********/
-/******  Desktop 1470 *******/
+/* desktop-1440 | __on-3xl */
 @include desktop-1470 {
-
 }
 
-/******  Tablet 992 *******/
+/* desktop-1200 | __on-xl */
+@include desktop-1200 {
+    .header-main--wrap {
+    height: var(--hm-height-tablet);
+
+    &.hm--align-center__on-xl {
+      justify-content: center;
+    }
+  }
+}
+
+/* tablet-992 | __on-l */
 @include tablet-992 {
   #brx-header.sticky.scrolling > .header-main {
     height: var(--hm-sticky-height-tablet);
@@ -338,6 +353,10 @@ Responsive
 
   .header-main--wrap {
     height: var(--hm-height-tablet);
+
+    &.hm--align-center__on-l {
+      justify-content: center;
+    }
   }
 
   .header-main--brand a {
@@ -345,7 +364,7 @@ Responsive
   }
 }
 
-/******  Tablet 767 *******/
+/* tablet 767 __on-m */
 @include tablet-767 {
   #brx-header.sticky.scrolling > .header-main {
     height: var(--hm-sticky-height-mobile);
@@ -360,7 +379,7 @@ Responsive
   }
 }
 
-/******  Mobile 440 *******/
+/* mobile-440 __on-s */
 @include mobile-440 {
   .header-main--brand {
     // max-width: 100px;

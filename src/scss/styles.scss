@@ -14,7 +14,7 @@ Author URI: glennepomuceno.com
 /*-------------- Main --------------*/
 @import "./main/settings.scss";
 @import "./main/utilities.scss";
-// @import './utilities/grid';
+@import './main/responsive-breakpoint.scss';
 // @import './utilities/fonts';
 
 /*-------------- Base --------------*/
@@ -24,23 +24,26 @@ Author URI: glennepomuceno.com
 @import './base/misc-styling.scss';
 
 /*-------------- Header --------------*/
-@import './header/header-top.scss';
-// @import './header/header-transparent.scss';
-@import './header/header-std.scss';
-@import './header/header-bottom.scss';
-@import './header/nav-orig-std.scss';
+@import './header/header.scss';
 
 /*-------------- Footer --------------*/
-@import './footer/footer-base.scss';
-@import './footer/footer-block.scss';
-@import './footer/footer-block-item.scss';
-@import './footer/footer-bottom.scss';
+@import './footer/footer.scss';
+
+/*-------------- UI - Essentials --------------*/
+@import './ui-essentials/ui-essentials.scss';
+
+/*-------------- UI - Others --------------*/
+@import './ui-others/ui-others.scss';
+
+
+/*-------------- Sections --------------*/
+@import './sections/section.scss';
 
 /*-------------- Layout --------------*/
 /* Hero */
-@import './layout/hero/hero-base.scss';
-@import './layout/hero/hero-blocks.scss';
-@import './layout/hero/hero-others.scss';
+@import './layout/hero/hero.scss';
+
+
 
 
 @import './layout/page/page-404-v1.scss';
@@ -54,38 +57,20 @@ Author URI: glennepomuceno.com
 @import './layout/blog/blog-blocks.scss';
 @import './layout/blog/blog-single.scss';
 
-/* Sections */
-@import './layout/sections/section-main.scss';
-@import './layout/sections/section-grid.scss';
-@import './layout/sections/section-template.scss';
+
 // @import './pages/homepage';
 
-/*-------------- UI --------------*/
-@import './ui/ui-base.scss';
-/* Buttons */
-@import './ui/buttons';
-/* Card */
-@import './ui/card/card-main.scss';
-@import './ui/card/card-templates.scss';
+/* Product */
+@import './layout/products/products.scss';
 
-@import './ui/list-ul.scss';
-@import './ui/carousel.scss';
-@import './ui/cta.scss';
-@import './ui/counter/counter.scss';
-@import './ui/countdown.scss';
-@import './ui/accordion.scss';
-@import './ui/icon-box.scss';
+/* Services */
+@import './layout/services/services.scss';
 
-/* Form */
-@import './ui/contact-form/forms-template.scss';
-// @import './ui/contact-form/forms-bricks.scss';
-@import './ui/contact-form/forms-cf7.scss';
+/*-------------- Custom --------------*/
+@import './custom/custom.scss';
 
-@import './ui/modal.scss';
-// @import './layout/nav';
-// @import './layout/header';
-// @import './layout/footer';
-// @import './layout/page';
+
+
 
 @import "./main/utilities-overide.scss";
 
@@ -95,8 +80,8 @@ Author URI: glennepomuceno.com
 
 /*-------------- Mobile --------------*/
 
-
-// Bricks Builder Edior Adjustment
-.bricks-panel input, ul li, ol li {
-    font-size: 11px;
+.bricks-panel input,
+.bricks-panel ul li,
+.bricks-panel ol li {
+  font-size: 11px;
 }

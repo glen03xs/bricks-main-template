@@ -43,3 +43,43 @@
 </html>
 
 <!-- CF7 Form update -->
+
+
+
+<div class="form--inner-wrap">
+	<div class="form-grid--2-col">
+		<div class="form-grid--left">
+			<div class="form-group">
+				<label>First Name <span>*</span></label>[text* first_name placeholder "First Name *"]
+			</div>
+			<div class="form-group">
+				<label>Last Name <span>*</span></label>[text* last_name placeholder "Last Name *"]
+			</div>
+
+			<div class="form-group">
+				<label>Company Email<span>*</span></label>[email* email placeholder
+				"Company Email*"]
+			</div>
+			<div class="form-group">
+				<label>Phone Number</label>[tel phone "Phone Number"]
+			</div>
+
+		</div>
+		<div class="form-grid--right">
+			<div class="form-group form--textarea">
+				<label>Message</label>[textarea description placeholder "Message"]
+			</div>
+		</div>
+	</div>
+<select  id="lead_source" name="lead_source" hidden="hidden">
+<option value="Web Inquiry" selected>Web Inquiry</option>
+</select>
+	<div class="form-btn-wrap">
+		<div class="form-btn-wrap--group">
+			[honeypot honeypot-202]
+		</div>
+		<div class="form-btn-wrap--group">
+			[submit class:bricks-button class:btn--w-l-glow "Submit"]
+		</div>
+	</div>
+</div>

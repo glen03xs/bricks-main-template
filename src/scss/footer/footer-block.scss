@@ -1,8 +1,8 @@
 /**************
  Footer Block
 ***************/
-:root {
-  --footer-logo-width: 240px; // Footer Block - About
+.footer-block  {
+  --footer-logo-width: 240px; // Footer Block - About 
   --fblk-title-size: var(--text-xl); 
   --fblk-title-color: var(--text-footer); 
   --fblk-title-case: capitalize; 

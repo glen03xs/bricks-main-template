@@ -1,0 +1,67 @@
+/**************
+ Card Grid - Custom
+***************/
+/****** Variables *******/
+.cards--column-custom {
+  --cards-col-custom--col-no: repeat(2, 1fr);
+  --cards-col-custom--col-no__on-3xl: var(--cards-col-custom--col-no);
+  --cards-col-custom--col-no__on-2xl: var(--cards-col-custom--col-no__on-3xl);
+  --cards-col-custom--col-no__on-xl: var(--cards-col-custom--col-no__on-2xl);
+  --cards-col-custom--col-no__on-l: var(--cards-col-custom--col-no__on-xl);
+  --cards-col-custom--col-no__on-m: var(--cards-col-custom--col-no__on-l);
+  --cards-col-custom--col-no__on-s: var(--cards-col-custom--col-no__on-m);
+  --cards-col-custom--col-gap: var(--space-xs);
+  --cards-col-custom--row-gap: var(--space-m);
+}
+
+/****** CSS *******/
+.cards--column-custom {
+  grid-template-columns: var(--cards-col-custom--col-no);
+  column-gap: var(--cards-col-custom--col-gap);
+  row-gap: var(--cards-col-custom--row-gap);
+}
+
+/**************
+Responsive
+***************/
+/* desktop-1440 | __on-3xl */
+@include desktop-1440 {
+  .cards--column-custom {
+    grid-template-columns: var(--cards-col-custom--col-no__on-3xl);
+  }
+}
+
+/* desktop-1366 | __on-2xl */
+@include desktop-1366 {
+  .cards--column-custom {
+    grid-template-columns: var(--cards-col-custom--col-no__on-2xl);
+  }
+}
+
+/* desktop-1200 | __on-xl */
+@include desktop-1200 {
+  .cards--column-custom {
+    grid-template-columns: var(--cards-col-custom--col-no__on-xl);
+  }
+}
+
+/* tablet-992 | __on-l */
+@include tablet-992 {
+  .cards--column-custom {
+    grid-template-columns: var(--cards-col-custom--col-no__on-l);
+  }
+}
+
+/* tablet 767 __on-m */
+@include tablet-767 {
+  .cards--column-custom {
+    grid-template-columns: var(--cards-col-custom--col-no__on-m);
+  }
+}
+
+/* mobile-440 __on-s */
+@include mobile-440 {
+  .cards--column-custom {
+    grid-template-columns: var(--cards-col-custom--col-no__on-s);
+  }
+}

@@ -1,0 +1,69 @@
+/**************
+ Blog Blocks - Search
+***************/
+
+/****** Blog Blocks - Search *******/
+.bm-sb-search-block {
+
+  .bm-sb-search-block--main {
+    width: 100%;
+  }
+
+  .bm-sb-search-block__field {
+    width: 100%;
+
+    input[type="search"] {
+      width: 100%;
+      height: 50px;
+    }
+
+    button {
+      background-color: var(--primary);
+      height: auto;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid var(--primary);
+
+      &:hover {
+        background-color: transparent;
+
+        i {
+          color: var(--primary);
+        }
+      }
+    }
+  }
+}
+
+
+/********* 
+Responsive
+*********/
+
+/******  Desktop 1470 *******/
+@include desktop-1470 {
+}
+
+/******  Desktop 1366 *******/
+@include desktop-1366 {
+}
+
+/******  Desktop 1200 *******/
+@include desktop-1200 {
+}
+
+/******  Tablet 992 *******/
+@include tablet-992 {
+}
+
+/******  Tablet 992 *******/
+@include tablet-767 {
+}
+
+/******  Mobile 480 *******/
+@include mobile-480 {
+}
+
+/******  Mobile 414 *******/
+@include mobile-414 {
+}

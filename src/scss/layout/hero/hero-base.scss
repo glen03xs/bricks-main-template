@@ -8,11 +8,13 @@ Hero Area
   --ha-height: calc(100vh - var(--ht-min-height) - var(--hm-height-desktop));
   --ha-c-height: 920px;
   --ha-c-height__on-l: 920px;
-  --ha-min-height__on-l: 700px;
+  --ha-min-height: 100%;
+  --ha-min-height__on-l: 860px;
 
   /* Hero Section Classes | If Hero has padding */ 
   --ha--mw-pd-tb: var(--space-4xl) 0 var(--space-4xl);
-  --ha--mw-pd-tb__on-l: var(--ha--mw-pd-tb);
+  --ha--mw-pd-tb__on-xl: var(--ha--mw-pd-tb);
+  --ha--mw-pd-tb__on-l: var(--ha--mw-pd-tb__on-xl);
   // --ha--mw-pd-tb__on-l: var(--space-2xl) 0 var(--space-2xl);
 
   --ha-pd-top__on-l: var(--ha-pd-top);
@@ -36,8 +38,7 @@ Hero Area
 
   // Title / h1
   --ha--content_title--color: var(--text-title);
-  // --ha--content_title--font-size: var(--font-hero-title); // Set in CF Dashboard
-  --ha--content_title--line-height: 1;
+  --ha--content_title--font-size: clamp(1.875rem, calc(1.435rem + 1.878vw), 3.125rem); /* min: 30px, max: 50px */  --ha--content_title--line-height: 1;
   --ha--content_title--font-weight: 600;
   --ha--content_title--tex-trans: uppercase;
   --ha--content_title--let-spcing: 0;
@@ -47,7 +48,7 @@ Hero Area
 
   // Subtitle / h3
   --ha--content_subtitle--color: var(--text-title);
-  // --ha--content_subtitle--font-size: var(--font-hero-subtitle); // Set in CF Dashboard
+  --ha--content_subtitle--font-size: var(--font-hero-subtitle); // Set in CF Dashboard
   --ha--content_subtitle--font-weight: 500;
   --ha--content_subtitle--line-height: 1;
   --ha--content_subtitle--tex-trans: capitalize;
@@ -60,7 +61,7 @@ Hero Area
 
   // Text / p
   --ha--content_text--color: var(--text-body);
-  // --ha--content_text-font-size: var(--font-hero-text); // Set in CF Dashboard
+  --ha--content_text-font-size: var(--font-hero-text); // Set in CF Dashboard
   --ha--content_text--font-weight: 400;
   --ha--content_text--line-height: var(--default-text-line-height);
   --ha--content_text--tex-trans: none;
@@ -78,6 +79,7 @@ Hero Area
 .hero-area {
   height: var(--ha-height);
   max-height: var(--ha-100vh-w-header-offset__mxh);
+
 
   &.ha--slider {
     & > div {
@@ -128,6 +130,7 @@ Hero Area
   height: 100%;
   justify-content: center;
   z-index: 3;
+  min-height: var(--ha-min-height);
 
   &.ha--align-top {
     justify-content: start;
@@ -335,7 +338,7 @@ Hero Area
   h1,
   .hero-area--content__title {
     color: var(--ha--content_title--color);
-    font-size: var(--font-hero-title);
+    font-size: var(--ha--content_title--font-size);
     line-height: var(--ha--content_title--line-height);
     font-weight: var(--ha--content_title--font-weight);
     text-transform: var(--ha--content_title--tex-trans);
@@ -346,7 +349,7 @@ Hero Area
   h3,
   .hero-area--content__subtitle {
     color: var(--ha--content_subtitle--color);
-    font-size: var(--font-hero-subtitle);
+    font-size: var(--ha--content_subtitle--font-size);
     font-weight: var(--ha--content_subtitle--font-weight);
     line-height: var(--ha--content_subtitle--line-height);
     text-transform: var(--ha--content_subtitle--tex-trans);
@@ -361,7 +364,7 @@ Hero Area
     p,
     .hero-area--content__text {
       color: var(--ha--content_text--color);
-      font-size: var(--font-hero-text);
+      font-size: var(--ha--content_text-font-size);
       font-weight: var(--ha--content_text--font-weight);
       line-height: var(--ha--content_text--line-height);
       text-transform: var(--ha--content_text--tex-trans);

@@ -2,14 +2,15 @@
  Header Top
 ***************/
 //Settings
-
 :root {
+    --ht-min-height: 40px; // Set Height here
+}
+.header-top {
   --ht-bg: #ffffff;
   --ht-bc: #c5c5c5; // Border Color
   --ht-font-size: var(--text-s);
   --ht-contact-icon-size: var(--text-s);
   --ht-social-icon-size: var(--text-l);
-  --ht-min-height: 40px; // Set Height here
   --ht-btn-overflow: 6px;
 }
 

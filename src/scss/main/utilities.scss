@@ -71,7 +71,8 @@
   h6,
   span,
   li,
-  cite {
+  cite,
+  label {
     color: var(--text-light) !important;
   }
 }
@@ -88,7 +89,8 @@
   h6,
   span,
   li,
-  cite {
+  cite,
+  label {
     color: var(--primary);
   }
 }
@@ -105,7 +107,8 @@
   h6,
   span,
   li,
-  cite {
+  cite,
+  label {
     color: var(--secondary);
   }
 }
@@ -122,7 +125,8 @@
   h6,
   span,
   li,
-  cite {
+  cite,
+  label {
     color: var(--tertiary);
   }
 }
@@ -160,7 +164,6 @@
   }
 }
 
-// Icon Color
 .t--icons--light {
   i {
     color: var(--text-light);
@@ -204,36 +207,71 @@
   margin: 0;
 }
 
+/****** Utilities - Images *******/
 .t--img-fhw {
   height: 100% !important; // Override <figure> tag class
   width: 100% !important;
 
-  &.t--img-fhw__align-top {
-    img {
-      object-position: top;
-    }
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
-  &.t--img-fhw__align-bottom {
-    img {
-      object-position: bottom;
-    }
-  }
-  &.t--img-fhw__align-left {
-    img {
-      object-position: left;
-    }
-  }
-  &.t--img-fhw__align-right {
-    img {
-      object-position: right;
-    }
+}
+
+.t--img-fhw-cover {
+  height: 100%;
+  width: 100%;
+
+  figure {
+    height: 100%;
+    width: 100%;
   }
 
   img {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    aspect-ratio: 16 / 9;
+  }
+}
+
+.t--img-contain {
+  height: 100%;
+  width: 100%;
+
+  figure {
+    height: 100%;
+    width: 100%;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+.t--img-fhw__align-top {
+  img {
+    object-position: top;
+  }
+}
+
+.t--img-fhw__align-bottom {
+  img {
+    object-position: bottom;
+  }
+}
+
+.t--img-fhw__align-left {
+  img {
+    object-position: left;
+  }
+}
+
+.t--img-fhw__align-right {
+  img {
+    object-position: right;
   }
 }
 
@@ -309,33 +347,6 @@
   }
 }
 
-// Max width - Computed .t--mxw-1000px
-@mixin generate-max-width-px($start, $end, $step) {
-  $i: $start; // Initialize the loop variable
-  @while $i <= $end {
-    .t--mxw-#{$i}px {
-      max-width: #{$i}px;
-    }
-    $i: $i + $step; // Increment by $step
-  }
-}
-
-@include generate-max-width-px(200, 1100, 5);
-
-// Width .t--w-92
-@mixin generate-width-pct($start, $end, $step) {
-  $i: $start; // Initialize the loop variable
-  @while $i <= $end {
-    .t--w-#{$i} {
-      width: unquote($i + "%");
-    }
-    $i: $i + $step; // Increment by $step
-  }
-}
-
-// Example usage of the mixin
-@include generate-width-pct(50, 100, 2);
-
 /****** Others *******/
 .t--bg-parallax {
   background-repeat: no-repeat !important;
@@ -376,35 +387,11 @@ Responsive
     display: block !important;
   }
 
-  // Max width - Computed
-  @mixin generate-max-width-px__on-xl($start, $end, $step) {
-    $i: $start; // Initialize the loop variable
-    @while $i <= $end {
-      .t--mxw-#{$i}px__on-xl {
-        max-width: #{$i}px;
-      }
-      $i: $i + $step; // Increment by $step
-    }
-  }
-  @include generate-max-width-px__on-xl(200, 1100, 5);
-
-  // Width
-  @mixin generate-width-pct__on-xl($start, $end, $step) {
-    $i: $start; // Initialize the loop variable
-    @while $i <= $end {
-      .t--w-#{$i}__on-xl {
-        width: unquote($i + "%");
-      }
-      $i: $i + $step; // Increment by $step
-    }
-  }
-  @include generate-width-pct__on-xl(50, 100, 2);
-}
-
   // Max Width - Static
   .t--mxw-100__on-xl {
     max-width: 100%;
   }
+}
 
 /******  Tablet 992 | __on-l *******/
 @media (max-width: 992px) {
@@ -427,43 +414,15 @@ Responsive
   .t--text-align--left__on-l {
     text-align: left;
   }
-  
+
   .t--text-align--center__on-l {
     text-align: center;
   }
-  
+
   .t--text-align--right__on-l {
     text-align: right;
   }
 
-  // Max width - Computed
-  @mixin generate-max-width-px__on-l($start, $end, $step) {
-    $i: $start; // Initialize the loop variable
-    @while $i <= $end {
-      .t--mxw-#{$i}px__on-l {
-        max-width: #{$i}px;
-      }
-      $i: $i + $step; // Increment by $step
-    }
-  }
-  @include generate-max-width-px__on-l(200, 1100, 5);
-
-  // Width - t--w-100__on-l
-  @mixin generate-width-pct__on-l($start, $end, $step) {
-    $i: $start; // Initialize the loop variable
-    @while $i <= $end {
-      .t--w-#{$i}__on-l {
-        width: unquote($i + "%");
-      }
-      $i: $i + $step; // Increment by $step
-    }
-  }
-  @include generate-width-pct__on-l(50, 100, 2);
-
-  // Max Width - Static
-  .t--mxw-100__on-l {
-    max-width: 100%;
-  }
 }
 
 /******  Tablet 767 | __on-m *******/
@@ -479,48 +438,18 @@ Responsive
   .t--text-align--left__on-m {
     text-align: left;
   }
-  
+
   .t--text-align--center__on-m {
     text-align: center;
   }
-  
+
   .t--text-align--right__on-m {
     text-align: right;
   }
-
-  // Max width - Computed
-  @mixin generate-max-width-px__on-m($start, $end, $step) {
-    $i: $start; // Initialize the loop variable
-    @while $i <= $end {
-      .t--mxw-#{$i}px__on-m {
-        max-width: #{$i}px;
-      }
-      $i: $i + $step; // Increment by $step
-    }
-  }
-  @include generate-max-width-px__on-m(200, 1100, 5);
-
-  // Width
-  @mixin generate-width-pct__on-m($start, $end, $step) {
-    $i: $start; // Initialize the loop variable
-    @while $i <= $end {
-      .t--w-#{$i}__on-m {
-        width: unquote($i + "%");
-      }
-      $i: $i + $step; // Increment by $step
-    }
-  }
-  @include generate-width-pct__on-m(50, 100, 2);
-
-    // Max Width - Static
-    .t--mxw-100__on-m {
-      max-width: 100%;
-    }
 }
 
 /******  Mobile 440 | __on-s *******/
 @media (max-width: 440px) {
-
   .t--hide__on-s {
     display: none;
   }
@@ -528,33 +457,4 @@ Responsive
   .t--show__on-s {
     display: block !important;
   }
-
-  // Max width - Computed
-  @mixin generate-max-width-px__on-s($start, $end, $step) {
-    $i: $start; // Initialize the loop variable
-    @while $i <= $end {
-      .t--mxw-#{$i}px__on-s {
-        max-width: #{$i}px;
-      }
-      $i: $i + $step; // Increment by $step
-    }
-  }
-  @include generate-max-width-px__on-s(200, 1100, 5);
-
-  // Width
-  @mixin generate-width-pct__on-s($start, $end, $step) {
-    $i: $start; // Initialize the loop variable
-    @while $i <= $end {
-      .t--w-#{$i}__on-s {
-        width: unquote($i + "%");
-      }
-      $i: $i + $step; // Increment by $step
-    }
-  }
-  @include generate-width-pct__on-s(50, 100, 2);
-
-    // Max Width - Static
-    .t--mxw-100__on-s {
-      max-width: 100%;
-    }
 }

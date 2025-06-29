@@ -1,0 +1,355 @@
+/**************
+   Forms - CF7 Add on Classes
+  ***************/
+.bsd-form {
+}
+
+/****** Forms *******/
+.bsd-form {
+  .form-row {
+    &.bf-fr--fg-no-mb {
+      .form-group {
+        margin-bottom: 0;
+      }
+    }
+
+    &.bf-fr--2-col {
+      column-gap: var(--form-row--col-gap);
+
+      & > div {
+        width: 50%;
+      }
+    }
+
+    &.bf-fr--3-col {
+      column-gap: var(--form-row--col-gap);
+
+      & > div {
+        width: 33.33%;
+      }
+    }
+
+    &.bf-fr--3-col-nl {
+      column-gap: var(--form-row--col-gap);
+      align-items: end;
+
+      & > div {
+        // width: 50%;
+        margin-bottom: 0;
+      }
+
+      .form-btn-wrap {
+        position: relative;
+
+        .bricks-button {
+          height: 50px;
+        }
+
+        .wpcf7-spinner {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          margin: 0;
+          top: 15px;
+        }
+      }
+    }
+  }
+
+  &.bf--cf7-bg-theme-color {
+    .form-btn-wrap {
+      .bricks-button {
+        border-color: #ffffff;
+
+        &:hover {
+          color: #ffffff;
+        }
+      }
+    }
+  }
+
+  /* Form helper class */
+  // Alignment - Vertical
+  &.bf--align-top {
+    align-items: start;
+  }
+
+  &.bf--align-bottom {
+    align-items: end;
+  }
+
+  &.bf--align-center {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  }
+
+  &.bf--align-right {
+    margin-left: auto;
+    justify-content: end;
+  }
+
+  // Form Number of column class
+  &.bf--nl--1-col {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &.bf--nl--2-col {
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .nl-2-fields {
+      display: flex;
+      flex-wrap: wrap;
+      // column-gap: var(--space-2xs);
+      justify-content: space-between;
+
+      & > div:nth-child(1),
+      & > div:nth-child(2) {
+        width: calc(50% - var(--space-6xs));
+      }
+
+      & > div:nth-child(3) {
+        width: 100%;
+      }
+
+      .form-btn-wrap {
+        margin-top: var(--space-5xs);
+      }
+    }
+
+    .nl-3-fields {
+      display: flex;
+      flex-wrap: wrap;
+      // column-gap: var(--space-2xs);
+      justify-content: space-between;
+
+      & > div:nth-child(1),
+      & > div:nth-child(2) {
+        width: calc(50% - var(--space-6xs));
+      }
+
+      & > div:nth-child(3) {
+        width: 100%;
+      }
+      & > div:nth-child(4) {
+        width: 100%;
+      }
+
+      .form-btn-wrap {
+        margin-top: var(--space-5xs);
+      }
+    }
+  }
+
+  &.bf--nl-cta-form {
+    max-width: 970px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  // Button Alignment
+  &.bf--btn-cf--align-left {
+    .form-btn-wrap {
+      text-align: left;
+    }
+  }
+
+  &.bf--btn-cf--align-center {
+    .form-btn-wrap {
+      text-align: center;
+    }
+  }
+
+  &.bf--btn-cf--align-right {
+    .form-btn-wrap {
+      text-align: right;
+    }
+  }
+  &.bf--btn-wrap-cf-4xs {
+    .form-btn-wrap {
+      margin-top: var(--space-4xs);
+    }
+  }
+
+  &.bf--btn-wrap-cf-3xs {
+    .form-btn-wrap {
+      margin-top: var(--space-3xs);
+    }
+  }
+  &.bf--btn-wrap-cf-2xs {
+    .form-btn-wrap {
+      margin-top: var(--space-2xs);
+    }
+  }
+  &.bf--btn-wrap-cf-xs {
+    .form-btn-wrap {
+      margin-top: var(--space-xs);
+    }
+  }
+  &.bf--btn-wrap-cf-s {
+    .form-btn-wrap {
+      margin-top: var(--space-s);
+    }
+  }
+  &.bf--btn-wrap-cf-m {
+    .form-btn-wrap {
+      margin-top: var(--space-m);
+    }
+  }
+
+  &.bf--btn-outline-light {
+    .form-btn-wrap {
+      .bricks-button {
+        color: var(--text-light);
+        background-color: transparent;
+        border-color: var(--bg-light);
+        border-width: var(--outline-btn-border-width);
+
+        &:hover {
+          color: var(--outline-btn-color_hover);
+          background-color: var(--outline-btn-bg-color_hover);
+          border-color: var(--outline-btn-border-color_hover);
+        }
+      }
+    }
+  }
+
+  &.bf--btn-outline-hover-white {
+    .form-btn-wrap {
+      .bricks-button {
+        color: var(--text-light);
+        background-color: transparent;
+        border-color: var(--bg-light);
+        border-width: var(--outline-btn-border-width);
+
+        &:hover {
+          color: var(--primary);
+          background-color: var(--text-light);
+          border-color: var(--bg-light);
+        }
+      }
+    }
+  }
+
+  &.bf--cf-w-500 {
+    width: 500px;
+  }
+
+  &.bf--cf-w-680 {
+    width: 100%;
+    max-width: 680px;
+  }
+
+  &.bf--cf-1-col {
+    .form-row {
+      &.bf-fr--2-col,
+      &.bf-fr--3-col {
+        flex-wrap: wrap;
+
+        & > div {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &.bf--label-none {
+    label {
+      display: none;
+    }
+  }
+
+  &.bf--label-light {
+    .form-group {
+      label {
+        color: #ffffff;
+      }
+    }
+
+    .wpcf7-response-output {
+      color: #ffffff;
+    }
+  }
+
+  &.bf--border-none {
+    input:not(input[type="submit"]):not(input[type="file"]),
+    select,
+    textarea {
+      border: none;
+    }
+  }
+
+  &.bf--border-rounded {
+    input:not(input[type="submit"]):not(input[type="file"]),
+    select,
+    textarea {
+      border-radius: var(--form-field-border-radius);
+    }
+  }
+}
+
+/**************
+Responsive
+***************/
+
+/* tablet-992 | __on-l */
+@include tablet-992 {
+  .bsd-form {
+    &.bf--btn-cf--align-center__on-l {
+      .form-btn-wrap {
+        text-align: center;
+      }
+    }
+
+    &.bf--btn-cf--align-right__on-l {
+      .form-btn-wrap {
+        text-align: right;
+      }
+    }
+  }
+}
+
+/******  Tablet 767 *******/
+@include tablet-767 {
+  .bsd-form {
+    .form-row {
+      &.bf-fr--2-col {
+        column-gap: 0;
+        row-gap: 0;
+
+        & > div {
+          width: 100%;
+        }
+      }
+
+      &.bf-fr--3-col {
+        column-gap: 0;
+        row-gap: 0;
+
+        & > div {
+          width: 100%;
+        }
+      }
+    }
+
+    &.bf--btn-cf--align-center__on-m {
+      .form-btn-wrap {
+        text-align: center;
+      }
+    }
+
+    &.bf--btn-cf--align-right__on-m {
+      .form-btn-wrap {
+        text-align: right;
+      }
+    }
+  }
+}
+
+/******  Mobile 480 *******/
+@include mobile-480 {
+}
