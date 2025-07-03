@@ -1,0 +1,39 @@
+/**************
+ Header - To be finished
+***************/
+/****** Variables *******/
+
+/****** CSS *******/
+#brx-header {
+  // background-color: #fff;
+}
+
+#brx-header.sticky.scrolling > .header-main--wrap {
+  background-color: var(--hm-bg-sticky);
+  height: var(--hm-sticky-height);
+}
+
+#brx-header.sticky.scrolling > .header-main {
+  background-color: var(--hm-bg-sticky);
+  box-shadow: 0 0 10px #00000006, 0 1px 1px #00000003, 0 0 50px #00000012;
+}
+/**************
+Responsive
+***************/
+/* desktop-1440 | __on-3xl */ 
+@include desktop-1440  {}
+
+/* desktop-1366 | __on-2xl */
+@include desktop-1366  {}
+
+/* desktop-1200 | __on-xl */
+@include desktop-1200  {}
+ 
+/* tablet-992 | __on-l */
+@include tablet-992 {}
+ 
+/* tablet 767 __on-m */
+@include tablet-767 {}
+ 
+/* mobile-440 __on-s */
+@include mobile-440 {}

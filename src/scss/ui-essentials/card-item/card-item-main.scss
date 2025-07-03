@@ -19,6 +19,7 @@
   --card-item--margin: 0 auto;
 
   --card-item--head-pd: 0;
+  --card-item--head-mg: 0;
   --card-item--head-border-color: var(--card-item-border-color);
   --card-item--head-border-width: var(--card-item-border-width);
   --card-item--head-border-radius: 0;
@@ -32,6 +33,42 @@
   --card-item--icon-color: var(--primary);
   --card-item--icon-size: var(--text-5xl);
   --card-item--icon-mb: 0;
+
+  --ci-head-label--color: var(--primary);
+  --ci-head-label--font-size: var(--text-s);
+  --ci-head-label--font-weight: 600;
+  --ci-head-label--tex-trans: uppercase;
+  --ci-head-label--let-spcing: 2px;
+  --ci-head-label--mb: var(--space-2xs);
+
+  --ci-head-title--color: var(--text-title);
+  --ci-head-title--font-size: var(
+    --font-section-title
+  ); // uncomment if custom
+  --ci-head-title--font-weight: 300;
+  --ci-head-title--tex-trans: capitalize;
+  --ci-head-title--line-height: var(--default-title-line-height);
+  --ci-head-title--let-spcing: 0;
+  --ci-head-title--mb: var(--space-section-head-title-mb);
+
+  // H3
+  --ci-head-subtitle--color: var(--text-title);
+  --ci-head-subtitle--font-size: var(--font-section-subtitle);
+  --ci-head-subtitle--font-weight: 400;
+  --ci-head-subtitle--tex-trans: capitalize;
+  --ci-head-subtitle--line-height: var(--default-title-line-height);
+  --ci-head-subtitle--let-spcing: 0;
+  --ci-head-subtitle--mb: var(--space-xs);
+
+  // Text
+  --ci-head-text-wrap--mb: var(--space-m);
+  --ci-head-text--color: var(--text-body);
+  --ci-head-text--font-size: var(--text-m);
+  // --ci-head-text--font-size: var(--font-section-text); // Uncomment for custom
+  --ci-head-text--font-weight: 400;
+  --ci-head-text--tex-trans: none;
+  --ci-head-text--let-spcing: 0;
+  --ci-head-text--mb: var(--space-xs);
 
   --card-item--content-pd: var(--space-xs) 0 0;
   --card-item--content-border-color: var(--card-item-border-color);
@@ -75,7 +112,7 @@
 }
 
 .card-item--w-base-pd {
-   --card-item-pd: 26px;
+  --card-item-pd: 26px;
 }
 
 .card-item--review-boxed {
@@ -100,7 +137,6 @@
   margin: var(--card-item--margin);
   padding: var(--card-item-pd);
 
-
   &.card-item--w-base-col-row-gap {
     row-gap: var(--card-item-row-gap);
   }
@@ -119,10 +155,56 @@
 
   .card-item--head {
     padding: var(--card-item--head-pd);
+    margin: var(--card-item--head-mg);
     border-color: var(--card-item--head-border-color);
     border-width: var(--card-item--head-border-width);
     border-radius: var(--card-item--head-border-radius);
     border-style: solid;
+
+    .card-item--head-label {
+      color: var(--ci-head-label--color);
+      font-size: var(--ci-head-label--font-size);
+      font-weight: var(--ci-head-label--font-weight);
+      text-transform: var(--ci-head-label--tex-trans);
+      letter-spacing: var(--ci-head-label--let-spcing);
+      margin-bottom: var(--ci-head-label--mb);
+    }
+
+    .card-item--head-title {
+      color: var(--ci-head-title--color);
+      font-size: var(--ci-head-title--font-size);
+      font-weight: var(--ci-head-title--font-weight);
+      text-transform: var(--ci-head-title--tex-trans);
+      letter-spacing: var(--ci-head-title--let-spcing);
+      line-height: var(--ci-head-title--line-height);
+      margin-bottom: var(--ci-head-title--mb);
+    }
+
+    .card-item--head-subtitle {
+      color: var(--ci-head-subtitle--color);
+      font-size: var(--ci-head-subtitle--font-size);
+      font-weight: var(--ci-head-subtitle--font-weight);
+      text-transform: var(--ci-head-subtitle--tex-trans);
+      letter-spacing: var(--ci-head-subtitle--let-spcing);
+      line-height: var(--ci-head-subtitle--line-height);
+      margin-bottom: var(--ci-head-subtitle--mb);
+    }
+
+    .card-item--head-text {
+         margin-bottom: var(--ci-head-text-wrap--mb);
+      p {
+        color: var(--ci-head-text--color);
+        font-size: var(--ci-head-text--font-size);
+        font-weight: var(--ci-head-text--font-weight);
+        text-transform: var(--ci-head-text--tex-trans);
+        letter-spacing: var(--ci-head-text--let-spcing);
+        margin-bottom: var(--ci-head-text--mb);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 
   .card-item--img {

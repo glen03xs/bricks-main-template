@@ -3,7 +3,8 @@
 ***************/
 //Settings
 :root {
-    --ht-min-height: 40px; // Set Height here
+  --ht-height: 40px; // Set Height here
+  --ht-min-height: var(--ht-height); // To be deleted
 }
 .header-top {
   --ht-bg: #ffffff;
@@ -122,7 +123,7 @@
 }
 
 .header-top--wrap {
-  min-height: var(--ht-min-height);
+  min-height: var(--ht-height);
 
   &.ht--col-fluid {
     display: flex;
@@ -283,7 +284,7 @@
   &.ht--btn--overflow {
 
     .bricks-button {
-      height: calc(var(--ht-min-height) + var(--ht-btn-overflow));
+      height: calc(var(--ht-height) + var(--ht-btn-overflow));
     }
   }
 

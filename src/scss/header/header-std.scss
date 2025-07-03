@@ -2,9 +2,15 @@
  Header - Std  | Header Main
 ***************/
 :root {
-  --hm-height-desktop: 126px;
-  --hm-height-tablet: 100px;
-  --hm-height-mobile: 84px;
+  --hm-height: 126px;
+  --hm-height__on-l: 100px;
+  --hm-height__on-m: 84px;
+
+  --hm-height-desktop: var(--hm-height);
+  --hm-height-tablet: var(--hm-height__on-l);
+  --hm-height-mobile: var(--hm-height__on-m);
+
+  
 }
 
 .header-main {
@@ -77,7 +83,7 @@
 
 /****** Header Main *******/
 .header-main--wrap {
-  height: var(--hm-height-desktop);
+  height: var(--hm-height);
 
   &.hm--col-fluid {
     display: flex;
@@ -337,7 +343,7 @@ Responsive
 /* desktop-1200 | __on-xl */
 @include desktop-1200 {
     .header-main--wrap {
-    height: var(--hm-height-tablet);
+    // height: var(--hm-height-tablet);
 
     &.hm--align-center__on-xl {
       justify-content: center;
@@ -352,7 +358,7 @@ Responsive
   }
 
   .header-main--wrap {
-    height: var(--hm-height-tablet);
+    height: var(--hm-height__on-l);
 
     &.hm--align-center__on-l {
       justify-content: center;
@@ -371,7 +377,7 @@ Responsive
   }
 
   .header-main--wrap {
-    height: var(--hm-height-mobile);
+    height: var(--hm-height__on-m);
   }
 
   .header-main--brand a {

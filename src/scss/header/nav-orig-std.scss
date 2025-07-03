@@ -16,9 +16,15 @@
 
   // Submenu
   --nav-item-gap: var(--space-m);
+  --nav-submenu-border-bottom: 1px solid #dddddd;
   --nav-submenu-bg: #fff;
+  --nav-submenu-bg_on-hover: var(--primary);
+  --nav-submenu-bg_on-cmi: var(--nav-submenu-bg_on-hover);
   --nav-submenu-text-color: var(--text-body);
-  --nav-submenu-text-color-bg_on-hover: var(--primary);
+  --nav-submenu-text-color_on-hover: #ffffff;
+  --nav-submenu-text-color_on-cmi: var(--nav-submenu-text-color_on-hover);
+  --nav-submenu-text-weight: 500;
+  
   // Mobile
   --nav-toggle-color: var(--nav-text-color);
   --nav-mobile-bg: var(--primary);
@@ -81,7 +87,7 @@
       }
     }
 
-    .current-page-parent {
+    .current-page-parent, .current-menu-parent {
       & > div > a,
       & > div button {
         color: var(--nav-text-active-page-color);
@@ -94,18 +100,23 @@
 
       & > {
         li {
-          border-bottom: 1px solid #dddddd;
+          border-bottom: var(--nav-submenu-border-bottom);
 
           & > a,
           & > div > a,
           & div > button {
             color: var(--nav-submenu-text-color);
             // font-size: var(--text-m);
-            font-weight: 400;
+            font-weight: var(--nav-submenu-text-weight);
           }
 
           &:hover {
-            background-color: var(--nav-submenu-text-color-bg_on-hover);
+            color: var(--nav-submenu-text-color_on-hover);
+            background-color: var(--nav-submenu-bg_on-hover);
+
+            a {
+              color: var(--nav-submenu-text-color_on-hover);
+            }
           }
 
           &:last-child {
@@ -117,8 +128,8 @@
       .current-menu-item {
         & > a,
         & > div {
-          background-color: var(--nav-submenu-text-color-bg_on-hover);
-          color: var(--nav-submenu-text-color);
+          background-color: var(--nav-submenu-bg_on-cmi);
+          color: var(--nav-submenu-text-color_on-cmi);
         }
       }
     }

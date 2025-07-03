@@ -2,9 +2,13 @@
  Header - Bottom
 ***************/
 :root {
-  --hb-height-desktop: 60px;
-  --hb-height-tablet: 56px;
-  --hb-height-mobile: 54px;
+  --hb-height: 60px;
+  --hb-height__on-l: 56px;
+  --hb-height__on-m: 54px;
+
+  --hb-height-desktop: var(--hb-height);
+  --hb-height-tablet: var(--hb-height__on-l);
+  --hb-height-mobile: var(--hb-height__on-m);
 }
 
 .header-bottom {
@@ -41,7 +45,7 @@
     a,
     p,
     span,
-      i {
+    i {
       color: #ffffff;
     }
 
@@ -49,7 +53,7 @@
       a,
       p,
       span,
-        i {
+      i {
         color: #ffffff;
       }
 
@@ -65,7 +69,6 @@
 
   &.hb--alt-actv-hvr {
     .bricks-nav-menu {
-
       .current-menu-item {
         & > a,
         & > div > a,
@@ -75,9 +78,8 @@
       }
 
       & > li {
-   
         &:hover button,
-        &:hover a, 
+        &:hover a,
         &:hover i {
           color: var(--hb-alt-nav-color);
         }
@@ -115,7 +117,7 @@
 
 /****** Header Main *******/
 .header-bottom--wrap {
-  height: var(--hb-height-desktop);
+  height: var(--hb-height);
 
   &.hb--col-fluid {
     display: flex;
@@ -359,7 +361,7 @@ Responsive
   }
 
   .header-bottom--wrap {
-    height: var(--hb-height-tablet);
+    height: var(--hb-height__on-l);
   }
 
   .header-bottom--brand a {
@@ -374,7 +376,7 @@ Responsive
   }
 
   .header-bottom--wrap {
-    height: var(--hb-height-mobile);
+    height: var(--hb-height__on-m);
   }
 
   .header-bottom--brand a {

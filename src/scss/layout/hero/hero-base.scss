@@ -5,13 +5,64 @@ Hero Area
 .hero-area {
   // Units
   --ha-100vh-w-header-offset__mxh: 980px; // Change to: None | Custom PX
-  --ha-height: calc(100vh - var(--ht-min-height) - var(--hm-height-desktop));
+  // --ha-height: calc(100vh - var(--ht-height) - var(--hm-height-desktop));
+
+  --ha-height: 920px;
+  --ha-height__on-l: var(--ha-height);
+  --ha-height__on-m: var(--ha-height_on-l);
+  --ha-mx-height: 920px;
+  --ha-mx-height__on-l: var(--ha-mx-height);
+  --ha-mx-height__on-m: var(--ha-mx-height__on-m);
+  --ha-mn-height: 920px;
+  --ha-mn-height__on-l: var(--ha-mn-heigh);
+  --ha-mn-height__on-m: var(--ha-mn-heigh__on-m);
+
+  /****** Header Type *******/
+  // #region Header - Top | Std | Bottom
+  // --ha-vh100-height: calc(
+  //   100vh - var(--ht-height) - var(--hm-height) - var(--hb-height)
+  // );
+  // --ha-vh100-height__on-l: calc(
+  //   100vh - var(--ht-height__on-l) - var(--hm-height__on-l) -
+  //     var(--hb-height__on-l)
+  // );
+  // --ha-vh100-height__on-m: calc(
+  //   100vh - var(--ht-height__on-m) - var(--hm-height__on-m) -
+  //     var(--hb-height__on-m)
+  // );
+  // #endregion
+  // #region Header - Top | Std
+  --ha-vh100-height: calc(100vh - var(--ht-height) - var(--hm-height));
+  --ha-vh100-height__on-l: calc(
+    100vh - var(--ht-height__on-l) - var(--hm-height__on-l)
+  );
+  --ha-vh100-height__on-m: calc(
+    100vh - var(--ht-height__on-m) - var(--hm-height__on-m)
+  );
+  // #endregion
+  // #region Header - Std | Bottom
+  // --ha-vh100-height: calc(100vh - var(--hm-height) - var(--hb-height));
+  // --ha-vh100-height__on-l: calc(
+  //   100vh - var(--hm-height__on-l) - var(--hb-height__on-l)
+  // );
+  // --ha-vh100-height__on-m: calc(
+  //   100vh - var(--hm-height__on-m) -
+  //     var(--hb-height__on-m)
+  // );
+  // #endregion
+  /****** End Header Type *******/
+
+  --ha-vh100-mx-height: 980px;
+  --ha-vh100-mx-height__on-l: 100%;
+  --ha-vh100-mn-height: 620px;
+  --ha-vh100-mn-height__on-l: 100%;
+
   --ha-c-height: 920px;
   --ha-c-height__on-l: 920px;
   --ha-min-height: 100%;
   --ha-min-height__on-l: 860px;
 
-  /* Hero Section Classes | If Hero has padding */ 
+  /* Hero Section Classes | If Hero has padding */
   --ha--mw-pd-tb: var(--space-4xl) 0 var(--space-4xl);
   --ha--mw-pd-tb__on-xl: var(--ha--mw-pd-tb);
   --ha--mw-pd-tb__on-l: var(--ha--mw-pd-tb__on-xl);
@@ -38,7 +89,12 @@ Hero Area
 
   // Title / h1
   --ha--content_title--color: var(--text-title);
-  --ha--content_title--font-size: clamp(1.875rem, calc(1.435rem + 1.878vw), 3.125rem); /* min: 30px, max: 50px */  --ha--content_title--line-height: 1;
+  --ha--content_title--font-size: clamp(
+    1.875rem,
+    calc(1.435rem + 1.878vw),
+    3.125rem
+  ); /* min: 30px, max: 50px */
+  --ha--content_title--line-height: 1;
   --ha--content_title--font-weight: 600;
   --ha--content_title--tex-trans: uppercase;
   --ha--content_title--let-spcing: 0;
@@ -48,7 +104,9 @@ Hero Area
 
   // Subtitle / h3
   --ha--content_subtitle--color: var(--text-title);
-  --ha--content_subtitle--font-size: var(--font-hero-subtitle); // Set in CF Dashboard
+  --ha--content_subtitle--font-size: var(
+    --font-hero-subtitle
+  ); // Set in CF Dashboard
   --ha--content_subtitle--font-weight: 500;
   --ha--content_subtitle--line-height: 1;
   --ha--content_subtitle--tex-trans: capitalize;
@@ -78,8 +136,23 @@ Hero Area
 /* Hero Area */
 .hero-area {
   height: var(--ha-height);
-  max-height: var(--ha-100vh-w-header-offset__mxh);
 
+  &.ha--w-mxh {
+    max-height: var(--ha-mx-height);
+  }
+  &.ha--w-mnh {
+    min-height: var(--ha-mn-height);
+
+    .hero-area--main-wrap {
+      min-height: var(--ha-mn-height);
+    }
+  }
+
+  &.ha--vh100 {
+    height: var(--ha-vh100-height);
+    max-height: var(--ha-vh100-mx-height);
+    min-height: var(--ha-vh100-mn-height);
+  }
 
   &.ha--slider {
     & > div {
@@ -130,7 +203,6 @@ Hero Area
   height: 100%;
   justify-content: center;
   z-index: 3;
-  min-height: var(--ha-min-height);
 
   &.ha--align-top {
     justify-content: start;
@@ -479,8 +551,19 @@ Responsive
   // }
 
   .hero-area {
-    height: 100%;
-    max-height: 100%;
+    height: var(--ha-height__on-l);
+
+    &.ha--w-mxh {
+      max-height: var(--ha-mx-height__on-l);
+    }
+    &.ha--w-mnh {
+      max-height: var(--ha-mn-height__on-l);
+    }
+
+    &.ha--vh100 {
+      max-height: var(--ha-vh100-mx-height__on-l);
+      min-height: var(--ha-vh100-mn-height__on-l);
+    }
 
     // To be UPDATED
     &.ha--w-padding__on-l {
@@ -603,6 +686,17 @@ Responsive
 
 /* tablet 767 __on-m */
 @include tablet-767 {
+  .hero-area {
+    height: var(--ha-height__on-m);
+
+    &.ha--w-mxh {
+      max-height: var(--ha-mx-height__on-m);
+    }
+    &.ha--w-mnh {
+      max-height: var(--ha-mn-height__on-m);
+    }
+  }
+
   .hero-area--main-inner-row {
     row-gap: var(--ha--mir-row-gap__on-m);
   }
